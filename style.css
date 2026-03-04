@@ -1,134 +1,143 @@
-/* Definisi Warna Premium */
+/* Palet Warna Sesuai Foto */
 :root {
-    --velvet-plum: #201d39;   /* Ungu Tua */
-    --misty-violet: #a79dda;  /* Ungu Muda */
-    --amber-glow: #e58500;    /* Oranye/Emas Tua */
-    --glitter-honey: #ffc451; /* Kuning/Emas Terang */
-    --white: #ffffff;
-    --bg-light: #f4f4f9;      /* Abu-abu terang untuk background */
+    --plum: #201d39;      /* Ungu Tua Velvet */
+    --honey: #ffc451;     /* Kuning Glitter */
+    --misty: #a79dda;     /* Ungu Muda */
+    --soft-bg: #fdfdfd;   /* Background Putih Bersih */
 }
 
 body {
-    background-color: var(--bg-light);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--soft-bg);
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    color: var(--velvet-plum);
-    line-height: 1.6;
+    color: var(--plum);
 }
 
-/* Navigasi Rapi */
+/* NAVIGASI ESTETIK */
 nav {
-    background-color: var(--velvet-plum);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: var(--plum);
+    padding: 1.2rem 0;
 }
 
 .nav-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .logo {
-    color: var(--white);
-    font-size: 1.4rem;
-    font-weight: bold;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 .logo span {
-    color: var(--glitter-honey);
+    color: var(--honey);
 }
 
 .nav-links a {
-    color: var(--misty-violet);
+    color: var(--misty);
     text-decoration: none;
-    margin-left: 15px;
-    font-weight: 500;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--glitter-honey);
+    color: var(--honey);
 }
 
-/* Judul Utama */
-.header-title {
+/* HEADER HALAMAN */
+.page-header {
     text-align: center;
-    padding: 40px 20px;
-    background-color: var(--white);
-    border-bottom: 4px solid var(--glitter-honey);
+    padding: 60px 20px;
 }
 
-/* Artikel Bedah Buku */
-.container-artikel {
-    max-width: 900px;
-    margin: 40px auto;
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--plum);
+    margin-bottom: 5px;
 }
 
-.artikel {
-    background: var(--white);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+/* CONTAINER KARTU BUKU */
+.container-aesthetic {
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.book-card {
+    background: white;
+    display: flex;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 15px 35px rgba(32, 29, 57, 0.08);
+    transition: 0.4s;
 }
 
-.artikel h2 {
-    color: var(--velvet-plum);
-    border-bottom: 2px solid var(--misty-violet);
-    padding-bottom: 10px;
-    text-transform: capitalize;
+.book-card:hover {
+    transform: translateY(-10px);
 }
 
-.artikel .penulis {
-    font-style: italic;
-    color: var(--amber-glow);
-    margin-bottom: 15px;
+.card-image {
+    width: 250px;
+    background: var(--plum);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.sampul {
-    width: 180px;
-    height: auto;
-    float: right;
-    margin: 0 0 20px 20px;
-    border: 3px solid var(--glitter-honey);
-    border-radius: 8px;
+.card-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-.blockquote {
-    font-style: italic;
-    padding: 15px 25px;
-    margin: 20px 0;
-    border-left: 5px solid var(--glitter-honey);
-    background-color: #f0eff5;
-    color: var(--velvet-plum);
+.card-content {
+    padding: 40px;
+    flex: 1;
 }
 
-/* Tombol Kembali */
-.btn-primary {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--velvet-plum);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
+.card-content h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.author {
+    color: var(--honey);
     font-weight: bold;
-    transition: 0.3s;
+    display: block;
+    margin-bottom: 20px;
 }
 
-.btn-primary:hover {
-    background-color: var(--amber-glow);
+.quote {
+    background: #f0eff5;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid var(--honey);
+    font-style: italic;
+    margin: 20px 0 0;
 }
 
 footer {
+    background: var(--plum);
+    color: var(--misty);
     text-align: center;
-    padding: 20px;
-    background-color: var(--velvet-plum);
-    color: var(--white);
+    padding: 40px;
 }
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .book-card { flex-direction: column; }
+    .card-image { width: 100%; box-sizing: border-box; }
+    .nav-links { display: none; } /* Untuk HP sebaiknya pakai menu burger nanti */
+}
+
