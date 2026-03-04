@@ -1,86 +1,134 @@
-/* Definisi Warna dari Foto Inspirasi */
+/* Definisi Warna Premium */
 :root {
-    --velvet-plum: #201d39;   /* Ungu Tua (Utama) */
-    --misty-violet: #a79dda;  /* Ungu Muda (Teks/Aksen) */
+    --velvet-plum: #201d39;   /* Ungu Tua */
+    --misty-violet: #a79dda;  /* Ungu Muda */
     --amber-glow: #e58500;    /* Oranye/Emas Tua */
-    --glitter-honey: #ffc451; /* Kuning/Emas Terang (Highlight) */
+    --glitter-honey: #ffc451; /* Kuning/Emas Terang */
     --white: #ffffff;
+    --bg-light: #f4f4f9;      /* Abu-abu terang untuk background */
 }
 
-/* Navigasi Utama */
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    color: var(--velvet-plum);
+    line-height: 1.6;
+}
+
+/* Navigasi Rapi */
 nav {
     background-color: var(--velvet-plum);
-    padding: 15px 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Memisahkan Logo di kiri & Menu di kanan */
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
 
-/* Styling Logo */
 .logo {
     color: var(--white);
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .logo span {
-    color: var(--glitter-honey); /* Warna emas terang dari foto */
-}
-
-/* Kelompok Link Navigasi */
-.nav-links {
-    display: flex;
-    gap: 10px; /* Jarak antar menu */
+    color: var(--glitter-honey);
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--misty-violet);
+    text-decoration: none;
+    margin-left: 15px;
     font-weight: 500;
-    font-size: 15px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-/* Efek Hover (Saat kursor di atas menu) */
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
+    color: var(--glitter-honey);
+}
+
+/* Judul Utama */
+.header-title {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--white);
+    border-bottom: 4px solid var(--glitter-honey);
+}
+
+/* Artikel Bedah Buku */
+.container-artikel {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.artikel {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.artikel h2 {
     color: var(--velvet-plum);
-    background-color: var(--glitter-honey); /* Berubah menjadi warna madu terang */
+    border-bottom: 2px solid var(--misty-violet);
+    padding-bottom: 10px;
+    text-transform: capitalize;
 }
 
-/* Tanda Halaman Aktif (Active State) */
-.nav-links a.active {
+.artikel .penulis {
+    font-style: italic;
+    color: var(--amber-glow);
+    margin-bottom: 15px;
+}
+
+.sampul {
+    width: 180px;
+    height: auto;
+    float: right;
+    margin: 0 0 20px 20px;
+    border: 3px solid var(--glitter-honey);
+    border-radius: 8px;
+}
+
+.blockquote {
+    font-style: italic;
+    padding: 15px 25px;
+    margin: 20px 0;
+    border-left: 5px solid var(--glitter-honey);
+    background-color: #f0eff5;
+    color: var(--velvet-plum);
+}
+
+/* Tombol Kembali */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--velvet-plum);
     color: var(--white);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-bottom: 2px solid var(--glitter-honey);
-    border-radius: 0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .nav-links a {
-        font-size: 13px;
-        padding: 5px 10px;
-    }
+.btn-primary:hover {
+    background-color: var(--amber-glow);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--velvet-plum);
+    color: var(--white);
 }
