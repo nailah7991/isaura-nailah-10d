@@ -1,137 +1,164 @@
+
+:root {
+    --bg-cream: #fefbf2;       /* Warna Background */
+    --accent-yellow: #f8d152;  /* Aksen Kuning */
+    --highlight-orange: #f7ab3e; /* Highlight Jingga */
+    --primary-blue: #5e6cb3;    /* Warna Teks Utama & Tombol */
+    --white: #ffffff;
+}
+
 body {
-background: #1B1F2A;
-font-family: Athena, sans-serif;
-color: #6a78a3;
-margin: 20px;
-}
-h1 {
-color: #6a78a3;
-text-align: center;
-}
-h2 {
-color: #6a78a3;
-text-align: left;
-}
-p {
-font-size: 18px;
-text-align: left;
-line-height: 1.5;
-}
-
-.daftar-produk {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-    padding:20px;
-}
-
-.produk{
-    background-color: #DCD1C7;
-    border:1px solid #ddd;
-    padding:15px;
-    border-radius:10px;
-    text-align: center;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-} 
-.produk img{
-    width:150px;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-.produk h2{
-    font-size: 20px;
-    color:#1B1F2A;
-}
-.produk h3{
-    font-size: 16px;
-    color: #f4edda;
-}
-.harga{
-    font-weight: bold;
-    color: #6a78a3;
-}
-.dekskripsi{
-    font-size: 14px;
-    color:#555;
-}
-
-.artikel{
-    max-width: 700px;
-    margin:auto;
+    background: var(--bg-cream);
+    font-family: 'Segoe UI', Athena, sans-serif;
+    color: var(--primary-blue);
+    margin: 0;
     padding: 20px;
-    background-color:#f4edda;
-    font-family:'Georgia',serif;
-
-    line-height: 1.8;
-
 }
-.artikel .penulis{
+
+h1 {
+    color: var(--primary-blue);
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--primary-blue);
+    text-align: left;
+}
+
+p {
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.6;
+    color: #333; /* Warna gelap agar mudah dibaca di atas krem */
+}
+
+/* KARTU PRODUK */
+.daftar-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.produk {
+    background-color: var(--white);
+    border: 2px solid var(--accent-yellow);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.produk:hover {
+    transform: translateY(-5px);
+    border-color: var(--highlight-orange);
+}
+
+.produk img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.produk h2 {
+    font-size: 20px;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+.produk h3 {
+    font-size: 16px;
+    color: var(--highlight-orange);
+}
+
+.harga {
+    font-weight: bold;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+}
+
+/* ARTIKEL / BEDAH BUKU */
+.artikel {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    line-height: 1.8;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.artikel .penulis {
     font-style: italic;
-    color: #6a78a3;
+    color: var(--highlight-orange);
     margin-bottom: 20px;
 }
- 
-.artikel .sampul{
+
+.artikel .sampul {
     width: 180px;
     float: right;
     margin: 0 0 20px 20px;
-    border: 1px solid #7a4854;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    border: 3px solid var(--accent-yellow);
+    border-radius: 10px;
 }
-.artikel .blockquote{
+
+.artikel .blockquote {
     font-style: italic;
-    padding-left: 20px;
+    padding: 15px 20px;
     margin: 20px 0;
-    border-left: 4px solid #7a4854;
-    color: #7a4854;
-    background-color: #f9f9f9;
+    border-left: 5px solid var(--highlight-orange);
+    color: var(--primary-blue);
+    background-color: var(--bg-cream);
 }
-.btn-kembali{
+
+/* TOMBOL */
+.btn-kembali {
     display: inline-block;
     margin-top: 30px;
-    padding: 10px 16px;
-    background-color: #6a78a3;
-    color: white;
+    padding: 12px 24px;
+    background-color: var(--primary-blue);
+    color: var(--white);
     text-decoration: none;
-    border-radius: 4px;
-}
-.btn-kembali:hover{
-    background-color: #f4edda;
+    border-radius: 50px; /* Membuat tombol lebih rounded/aesthetic */
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.formulir{
+.btn-kembali:hover {
+    background-color: var(--highlight-orange);
+    color: var(--white);
+}
+
+/* FORMULIR */
+.formulir {
     max-width: 600px;
     margin: auto;
-    padding: 20px;
-    background-color: #f4edda;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-form label{
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    border-top: 5px solid var(--accent-yellow);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-form input,
-form select,
-form textarea{
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+form label {
+    color: var(--primary-blue);
 }
- form button{
-    background-color: #6a78a3;
+
+form button {
+    background-color: var(--primary-blue);
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
- }
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 20px;
+    transition: 0.3s;
+}
 
- form button:hover{
-    background-color: #f4edda;
- }
+form button:hover {
+    background-color: var(--highlight-orange);
+}
