@@ -1,78 +1,203 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni - Saura Book Store</title>
+    <style>
+        /* Variabel Warna sesuai foto palet */
+        :root {
+            --dark-navy: #201d39;      /* Warna gelap header */
+            --velvet-plum: #514575;    /* Warna utama */
+            --misty-violet: #a79dda;   /* Warna sekunder */
+            --amber-glow: #e58500;     /* Warna aksen tombol */
+            --glitter-honey: #ffc451;  /* Warna highlight */
+        }
 
-  <title>Home</title>
-  <link rel="stylesheet" href="css/style.css">
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: var(--dark-navy);
+        }
+
+        /* Container agar konten rapi di tengah */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Navigasi Aesthetic */
+        nav {
+            background-color: var(--dark-navy);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--misty-violet);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--glitter-honey);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--velvet-plum);
+            margin-top: 30px;
+        }
+
+        /* Styling Formulir */
+        .formulir {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            border-top: 6px solid var(--amber-glow);
+        }
+
+        .formulir h2 {
+            color: var(--velvet-plum);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--velvet-plum);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Agar padding tidak merusak lebar */
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--misty-violet);
+            box-shadow: 0 0 5px rgba(167, 157, 218, 0.5);
+        }
+
+        button {
+            background-color: var(--amber-glow);
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--velvet-plum);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
-<header>
-    <img src=" c:\Users\Novita Dian\Downloads\download.jpg" width="1312" height="300">
-
-</header>
-  
 <body>
+
+<header>
+    <img src="https://via.placeholder.com/1312x300/514575/ffc451?text=Saura+Book+Store+Banner" alt="Banner Saura Book Store">
+</header>
+
 <nav>
-<a href="index.html">beranda</a>
-<a href="produk.html">katalog</a>
-<a href="bedahbuku.html">bedah buku</a>
-<a href="testimoni.html">testimoni</a>
-<a href="tampil-testimoni.html">testimoni pembeli</a>
-<a href="kontak.html">kontak</a>
-<a href="event.html">event</a>
+    <div class="container">
+        <a href="index.html">beranda</a>
+        <a href="produk.html">katalog</a>
+        <a href="bedahbuku.html">bedah buku</a>
+        <a href="testimoni.html">testimoni</a>
+        <a href="tampil-testimoni.html">ulasan pembeli</a>
+        <a href="kontak.html">kontak</a>
+        <a href="event.html">event</a>
+    </div>
 </nav>
-<h1>Toko buku saura book store</h1>
 
-<main class="formulir">
-    <h2>Berikan testimoni anda</h2>
-    <form id="formtestimoni">
-    <label for="nama">nama:</label>
-    <input type="text" id="nama" name="nama" required placeholder="Nama Lengkap">
-      
-    <label for="asal">asal Sekolah</label>
- <input type="text" id="asal" name="asal" required placeholder="Asal Sekolah">
+<div class="container">
+    <h1>Toko Buku Saura Book Store</h1>
 
-  <label for="judul">judul buku</label>
- <input type="text" id="judul" name="judul" required placeholder="judul buku">
+    <main class="formulir">
+        <h2>Berikan Testimoni Anda</h2>
+        <form id="formtestimoni">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required placeholder="Nama Lengkap">
+            
+            <label for="asal">Asal Sekolah:</label>
+            <input type="text" id="asal" name="asal" required placeholder="Asal Sekolah">
 
-    <label for="rating">rating:</label>
-    <input type="number" id="rating" name="rating" required placeholder="rating (1-5)"> 
+            <label for="judul">Judul Buku:</label>
+            <input type="text" id="judul" name="judul" required placeholder="Judul Buku yang Dibeli">
 
-    <label for="pesan">testimoni anda:</label>
-    <textarea id="pesan" name="pesan" required placeholder="tulis pengalaman anda..." rows="5"></textarea>
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required placeholder="Contoh: 5"> 
 
-    <label for="email">email:</label>
-    <input type="email" id="email" name="email" required placeholder="email@example.com">
+            <label for="pesan">Testimoni Anda:</label>
+            <textarea id="pesan" name="pesan" required placeholder="Tulis pengalaman seru kamu belanja di sini..." rows="5"></textarea>
 
-    
-    <button type="submit">kirim testimoni</button>
-    </form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="email@example.com">
+
+            <button type="submit">Kirim Testimoni ✨</button>
+        </form>
     </main>
-    <footer>
-     <p>&copy; 2026 Toko Buku Saura book Store</p>
-    </footer>
-    <script>
-document.getElementById('formTestimoni').addEventListener('submit', function(e) {
-    e.preventDefault();
+</div>
 
-    const nama = document.getElementById('nama').value;
-    const asal = document.getElementById('asal').value;
-    const judul= document.getElementById('judul').value;
-    const rating = document.getElementById('rating').value;
-    const pesan = document.getElementById('pesan').value;
-    const email = document.getElementById('email').value;
-    const dataBaru = { nama,asal,judul,rating,pesan, email };
+<footer>
+    <p>&copy; 2026 Toko Buku Saura Book Store.Crafting Stories with Heart   ❤️</p>
+</footer>
 
-    // Ambil list dari localStorage
-    let testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+<script>
+    // Perbaikan ID pada JavaScript agar sesuai dengan ID di HTML (formtestimoni)
+    document.getElementById('formtestimoni').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    // Tambahkan testimoni baru
-    testimoniList.push(dataBaru);
+        const nama = document.getElementById('nama').value;
+        const asal = document.getElementById('asal').value;
+        const judul = document.getElementById('judul').value;
+        const rating = document.getElementById('rating').value;
+        const pesan = document.getElementById('pesan').value;
+        const email = document.getElementById('email').value;
+        
+        const dataBaru = { nama, asal, judul, rating, pesan, email };
 
-    // Simpan kembali ke localStorage
-    localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
+        let testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+        testimoniList.push(dataBaru);
+        localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
 
-    // Arahkan ke halaman konfirmasi
-    window.location.href = 'proses_testimoni.html';
-});
+        // Pastikan file ini ada di folder project kamu
+        window.location.href = 'tampil-testimoni.html'; 
+    });
 </script>
+
+</body>
+</html>
