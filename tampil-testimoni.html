@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+
+<body>
+
+<header class="header">...</header>
+
+<main>
+  <h1>Produk Buku</h1>
+  <p>Daftar buku terbaik kami.</p>
+</main>
+
+</body>
+<header class="header">
+  <div class="nav-block">
+    <div class="logo">Saura Book Store</div>
+
+ <nav>
+<a href="index.html">Beranda</a>
+<a href="produk.html">produk</a>
+<a href="bedahbuku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni pembeli</a>
+<a href="kontak.html">kontak</a>
+<a href="event.html">event</a>
+<nav>
+  </div>
+</header>
+
+<main class="formulir"></main>
+<h2> testimoni-testimoni pembeli :</h2>
+<div id="daftarTestimoni"></div>
+
+<button id="hapusSemua">Hapus semua Testimoni</button>
+
+<section>
+<div id="daftarTestimoni"></div>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2026 toko buku saura book store</p>
+</footer>
+
+<script>
+  const container = document.getElementById('daftarTestimoni');
+  const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+
+  if (testimoniList.length === 0) {
+    container.innerHTML = "<p>Belum ada testimoni.</p>";
+  } else {
+    testimoniList.forEach((t, i) => {
+      const el = document.createElement('div');
+      el.className = 'testimoni-box';
+      el.innerHTML = `
+        <p><strong>Nama:</strong> ${t.nama}</p>
+        <p><strong>Asal sekolah/Instansi/Komunitas:</strong> ${t.asal}</p>
+        <p><strong>Email:</strong> ${t.email}</p>
+        <p><strong>Judul Buku yang Dibeli:</strong> ${t.judul}</p>
+        <p><strong>Rating Buku (1-5):</strong> ${t.rating}</p>
+        <p><strong>Testimoni Anda:</strong> ${t.pesan}</p>
+      `;
+      container.appendChild(el);
+    });
+  }
+
+  document.getElementById("hapusSemua").addEventListener("click", function(){
+    const konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua testimoni?");
+      if (konfirmasi) {
+        localStorage.removeItem("testimoniList");
+        location.reload();
+      }
+   });
+</script>
+
+</body>
+</html>
