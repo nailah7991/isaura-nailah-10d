@@ -1,78 +1,231 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Testimoni - Saura Book Store</title>
+    <style>
+        /* Variabel Warna Berdasarkan Palet "Glitter Magic" */
+        :root {
+            --dark-midnight: #201d39;  /* Warna paling gelap */
+            --velvet-plum: #514575;    /* Ungu tua mewah */
+            --misty-violet: #a79dda;   /* Ungu muda lembut */
+            --amber-glow: #e58500;     /* Oranye hangat */
+            --glitter-honey: #ffc451;  /* Kuning keemasan */
+        }
 
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfcfd;
+            color: var(--dark-midnight);
+        }
+
+        /* Container utama */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: var(--dark-midnight);
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            color: var(--glitter-honey);
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--misty-violet);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: var(--velvet-plum);
+        }
+
+        /* Konten Utama */
+        h2 {
+            text-align: center;
+            color: var(--velvet-plum);
+            margin: 40px 0 30px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--amber-glow);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Kartu Testimoni */
+        #daftarTestimoni {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .testimoni-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(81, 69, 117, 0.08);
+            border-top: 5px solid var(--glitter-honey);
+            border-bottom: 5px solid var(--velvet-plum);
+            transition: transform 0.3s ease;
+        }
+
+        .testimoni-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimoni-box p {
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .testimoni-box strong {
+            color: var(--velvet-plum);
+            font-size: 14px;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .pesan-text {
+            font-style: italic;
+            color: #444;
+            padding: 10px;
+            background: #f9f8ff;
+            border-radius: 10px;
+            margin-top: 15px !important;
+        }
+
+        /* Tombol Aksi */
+        .action-buttons {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        #hapusSemua {
+            background-color: transparent;
+            color: #d9534f;
+            border: 2px solid #d9534f;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #hapusSemua:hover {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        footer {
+            background-color: var(--dark-midnight);
+            color: var(--misty-violet);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
 <body>
 
-<header class="header">...</header>
-
-<main>
-  <h1>Produk Buku</h1>
-  <p>Daftar buku terbaik kami.</p>
-</main>
-
-</body>
-<header class="header">
-  <div class="nav-block">
-    <div class="logo">Saura Book Store</div>
-
- <nav>
-<a href="index.html">Beranda</a>
-<a href="produk.html">produk</a>
-<a href="bedahbuku.html">Bedah Buku</a>
-<a href="testimoni.html">Testimoni</a>
-<a href="tampil-testimoni.html">Testimoni pembeli</a>
-<a href="kontak.html">kontak</a>
-<a href="event.html">event</a>
-<nav>
-  </div>
+<header>
+    <div class="container">
+        <div class="logo">Saura Book Store</div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="bedahbuku.html">Bedah Buku</a>
+            <a href="testimoni.html">Kirim Testimoni</a>
+            <a href="tampil-testimoni.html" style="color: var(--glitter-honey);">Daftar Ulasan</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="event.html">Event</a>
+        </nav>
+    </div>
 </header>
 
-<main class="formulir"></main>
-<h2> testimoni-testimoni pembeli :</h2>
-<div id="daftarTestimoni"></div>
+<div class="container">
+    <h2>✨ Kata Mereka Tentang Saura</h2>
+    
+    <div id="daftarTestimoni">
+        </div>
 
-<button id="hapusSemua">Hapus semua Testimoni</button>
-
-<section>
-<div id="daftarTestimoni"></div>
-</section>
-</main>
+    <div class="action-buttons">
+        <button id="hapusSemua">🗑️ Bersihkan Semua Ulasan</button>
+    </div>
+</div>
 
 <footer>
-  <p>&copy; 2026 toko buku saura book store</p>
+    <div class="container">
+        <p>&copy; 2026 Saura Book Store. Membawa Keajaiban dalam Setiap Bacaan ✨</p>
+    </div>
 </footer>
 
 <script>
-  const container = document.getElementById('daftarTestimoni');
-  const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+    const container = document.getElementById('daftarTestimoni');
+    const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
 
-  if (testimoniList.length === 0) {
-    container.innerHTML = "<p>Belum ada testimoni.</p>";
-  } else {
-    testimoniList.forEach((t, i) => {
-      const el = document.createElement('div');
-      el.className = 'testimoni-box';
-      el.innerHTML = `
-        <p><strong>Nama:</strong> ${t.nama}</p>
-        <p><strong>Asal sekolah/Instansi/Komunitas:</strong> ${t.asal}</p>
-        <p><strong>Email:</strong> ${t.email}</p>
-        <p><strong>Judul Buku yang Dibeli:</strong> ${t.judul}</p>
-        <p><strong>Rating Buku (1-5):</strong> ${t.rating}</p>
-        <p><strong>Testimoni Anda:</strong> ${t.pesan}</p>
-      `;
-      container.appendChild(el);
+    if (testimoniList.length === 0) {
+        container.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 50px; color: var(--misty-violet);">
+                <p style="font-size: 1.2rem;">Belum ada testimoni nih, Saura. Ayo jadi yang pertama memberi ulasan!</p>
+            </div>`;
+    } else {
+        testimoniList.forEach((t) => {
+            const el = document.createElement('div');
+            el.className = 'testimoni-box';
+            el.innerHTML = `
+                <p><strong>👤 Nama</strong>: ${t.nama}</p>
+                <p><strong>🏫 Asal</strong>: ${t.asal}</p>
+                <p><strong>📖 Buku</strong>: ${t.judul}</p>
+                <p><strong>⭐ Rating</strong>: <span style="color: var(--amber-glow); font-weight:bold;">${t.rating}/5</span></p>
+                <p class="pesan-text">"${t.pesan}"</p>
+            `;
+            container.appendChild(el);
+        });
+    }
+
+    document.getElementById("hapusSemua").addEventListener("click", function(){
+        const yakin = confirm("Saura, serius mau menghapus semua testimoni pembeli?");
+        if (yakin) {
+            localStorage.removeItem("testimoniList");
+            location.reload();
+        }
     });
-  }
-
-  document.getElementById("hapusSemua").addEventListener("click", function(){
-    const konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua testimoni?");
-      if (konfirmasi) {
-        localStorage.removeItem("testimoniList");
-        location.reload();
-      }
-   });
 </script>
 
 </body>
