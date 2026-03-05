@@ -3,61 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event - Nama Website Anda</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Event - Saura Book Store</title>
+    <style>
+        /* Variabel Warna Berdasarkan Palet Foto Saura */
+        :root {
+            --dark-midnight: #201d39;  /* Deep Navy */
+            --velvet-plum: #514575;    /* Velvet Plum */
+            --misty-violet: #a79dda;   /* Misty Violet */
+            --amber-glow: #e58500;     /* Amber Glow */
+            --glitter-honey: #ffc451;  /* Glitter Honey */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9fb;
+            color: var(--dark-midnight);
+        }
+
+        /* Container utama */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigasi Aesthetic */
+        nav {
+            background-color: var(--dark-midnight);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: var(--misty-violet);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--glitter-honey);
+        }
+
+        header {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        header h1 {
+            color: var(--velvet-plum);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Card Event List */
+        .event-list {
+            margin-bottom: 50px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 25px;
+            box-shadow: 0 8px 20px rgba(81, 69, 117, 0.1);
+            border-left: 8px solid var(--amber-glow);
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-date {
+            background: var(--velvet-plum);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .event-date .day {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .event-detail h3 {
+            margin-top: 0;
+            color: var(--velvet-plum);
+            font-size: 1.4rem;
+        }
+
+        .event-detail p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .event-detail strong {
+            color: var(--dark-midnight);
+        }
+
+        .btn-event {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--amber-glow);
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-event:hover {
+            color: var(--velvet-plum);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--dark-midnight);
+            color: var(--misty-violet);
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Beranda</a>
-        <a href="produk.html">produk</a>
-        <a href="bedahbuku.html">Bedah Buku</a>
-        <a href="testimoni.html">Testimoni</a>
-        <a href="tampil-testimoni.html">Testimoni pembeli</a>
-        <a href="kontak.html">kontak</a>
-        <a href="event.html">event</a>
+        <div class="container">
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="bedahbuku.html">Bedah Buku</a>
+            <a href="testimoni.html">Testimoni</a>
+            <a href="tampil-testimoni.html">Ulasan Pembeli</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="event.html" style="color: var(--glitter-honey);">Event</a>
+        </div>
     </nav>
 
     <div class="container">
-        <header style="text-align: center; margin: 40px 0;">
+        <header>
             <h1>Agenda & Event Mendatang</h1>
-            <p>Ikuti keseruan acara kami dan jangan sampai ketinggalan!</p>
+            <p>Ikuti keseruan acara Saura Book Store dan jangan sampai ketinggalan!</p>
         </header>
 
         <section class="event-list">
-            <div class="event-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px; background: #fff;">
-                <div class="event-date" style="background: #3498db; color: white; padding: 15px; border-radius: 5px; text-align: center; min-width: 80px;">
-                    <span style="display: block; font-size: 24px; font-weight: bold;">25</span>
-                    <span>OKT</span>
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">25</span>
+                    <span class="month">OKT</span>
                 </div>
                 <div class="event-detail">
-                    <h3 style="margin-top: 0;">Peluncuran Buku: Misteri Senja</h3>
-                    <p><strong>Lokasi:</strong> Perpustakaan Nasional, Jakarta</p>
-                    <p><strong>Waktu:</strong> 10:00 WIB - Selesai</p>
-                    <p>Acara peluncuran buku terbaru karya Penulis X dengan sesi tanda tangan eksklusif.</p>
-                    <a href="#" style="color: #3498db; font-weight: bold; text-decoration: none;">Daftar Sekarang →</a>
+                    <h3>Peluncuran Buku: Misteri Senja</h3>
+                    <p><strong>📍 Lokasi:</strong> Perpustakaan Nasional, Jakarta</p>
+                    <p><strong>⏰ Waktu:</strong> 10:00 WIB - Selesai</p>
+                    <p>Acara peluncuran buku terbaru dengan sesi tanda tangan eksklusif.</p>
+                    <a href="#" class="btn-event">Daftar Sekarang →</a>
                 </div>
             </div>
 
-            <div class="event-card" style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px; background: #fff;">
-                <div class="event-date" style="background: #e67e22; color: white; padding: 15px; border-radius: 5px; text-align: center; min-width: 80px;">
-                    <span style="display: block; font-size: 24px; font-weight: bold;">12</span>
-                    <span>NOV</span>
+            <div class="event-card" style="border-left-color: var(--velvet-plum);">
+                <div class="event-date" style="background: var(--amber-glow);">
+                    <span class="day">12</span>
+                    <span class="month">NOV</span>
                 </div>
                 <div class="event-detail">
-                    <h3 style="margin-top: 0;">Workshop Menulis Kreatif</h3>
-                    <p><strong>Lokasi:</strong> Online (Zoom Meeting)</p>
-                    <p><strong>Waktu:</strong> 19:00 WIB - 21:00 WIB</p>
+                    <h3>Workshop Menulis Kreatif</h3>
+                    <p><strong>📍 Lokasi:</strong> Online (Zoom Meeting)</p>
+                    <p><strong>⏰ Waktu:</strong> 19:00 WIB - 21:00 WIB</p>
                     <p>Belajar teknik menulis narasi yang memikat bersama editor senior kami.</p>
-                    <a href="#" style="color: #e67e22; font-weight: bold; text-decoration: none;">Join Zoom →</a>
+                    <a href="#" class="btn-event">Join Zoom →</a>
                 </div>
             </div>
         </section>
-
-        <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #ddd;">
-            <p>&copy; 2026 saura book store. All rights reserved.</p>
-        </footer>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Saura Book Store. Membawa keajaiban di setiap halaman ❤️</p>
+        </div>
+    </footer>
 
 </body>
 </html>
