@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimoni - Saura Book Store</title>
     <style>
-        /* Variabel Warna sesuai foto palet */
+        /* Variabel Warna sesuai foto palet yang kamu kirim */
         :root {
-            --dark-navy: #201d39;      /* Warna gelap header */
-            --velvet-plum: #514575;    /* Warna utama */
-            --misty-violet: #a79dda;   /* Warna sekunder */
-            --amber-glow: #e58500;     /* Warna aksen tombol */
-            --glitter-honey: #ffc451;  /* Warna highlight */
+            --dark-navy: #201d39;      
+            --velvet-plum: #514575;    
+            --misty-violet: #a79dda;   
+            --amber-glow: #e58500;     
+            --glitter-honey: #ffc451;  
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
@@ -31,7 +31,8 @@
 
         header img {
             width: 100%;
-            height: auto;
+            height: 300px; /* Sesuai permintaan ukuran awalmu */
+            object-fit: cover;
             display: block;
         }
 
@@ -40,6 +41,7 @@
             background-color: var(--dark-navy);
             padding: 15px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         nav a {
@@ -48,8 +50,9 @@
             margin: 0 15px;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
             transition: 0.3s;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
@@ -59,76 +62,83 @@
         h1 {
             text-align: center;
             color: var(--velvet-plum);
-            margin-top: 30px;
+            margin-top: 40px;
+            font-size: 2.5rem;
         }
 
         /* Styling Formulir */
         .formulir {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            border-top: 6px solid var(--amber-glow);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 30px auto;
+            border-top: 8px solid var(--amber-glow);
         }
 
         .formulir h2 {
             color: var(--velvet-plum);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
+            font-weight: 600;
             color: var(--velvet-plum);
         }
 
         input, textarea {
             width: 100%;
-            padding: 12px;
+            padding: 12px 15px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box; /* Agar padding tidak merusak lebar */
+            border: 2px solid #eee;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--misty-violet);
-            box-shadow: 0 0 5px rgba(167, 157, 218, 0.5);
+            background-color: #f9f8ff;
         }
 
         button {
             background-color: var(--amber-glow);
             color: white;
-            padding: 15px 20px;
+            padding: 16px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             width: 100%;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(229, 133, 0, 0.3);
         }
 
         button:hover {
             background-color: var(--velvet-plum);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(81, 69, 117, 0.4);
         }
 
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: #777;
-            font-size: 14px;
+            padding: 40px 0;
+            background-color: var(--dark-navy);
+            color: var(--misty-violet);
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://via.placeholder.com/1312x300/514575/ffc451?text=Saura+Book+Store+Banner" alt="Banner Saura Book Store">
+    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1312&h=300&auto=format&fit=crop" alt="Banner Saura Book Store">
 </header>
 
 <nav>
@@ -136,7 +146,7 @@
         <a href="index.html">beranda</a>
         <a href="produk.html">katalog</a>
         <a href="bedahbuku.html">bedah buku</a>
-        <a href="testimoni.html">testimoni</a>
+        <a href="testimoni.html" style="color: var(--glitter-honey);">testimoni</a>
         <a href="tampil-testimoni.html">ulasan pembeli</a>
         <a href="kontak.html">kontak</a>
         <a href="event.html">event</a>
@@ -144,40 +154,41 @@
 </nav>
 
 <div class="container">
-    <h1>Toko Buku Saura Book Store</h1>
+    <h1>Saura Book Store</h1>
 
     <main class="formulir">
-        <h2>Berikan Testimoni Anda</h2>
+        <h2>✨ Berikan Testimoni Anda</h2>
         <form id="formtestimoni">
-            <label for="nama">Nama:</label>
-            <input type="text" id="nama" name="nama" required placeholder="Nama Lengkap">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" required placeholder="Contoh: Novita Dian">
             
-            <label for="asal">Asal Sekolah:</label>
-            <input type="text" id="asal" name="asal" required placeholder="Asal Sekolah">
+            <label for="asal">Asal Sekolah / Instansi</label>
+            <input type="text" id="asal" required placeholder="Contoh: SMA Negeri 1 Jakarta">
 
-            <label for="judul">Judul Buku:</label>
-            <input type="text" id="judul" name="judul" required placeholder="Judul Buku yang Dibeli">
+            <label for="judul">Judul Buku yang Dibeli</label>
+            <input type="text" id="judul" required placeholder="Masukkan judul novel">
 
-            <label for="rating">Rating (1-5):</label>
-            <input type="number" id="rating" name="rating" min="1" max="5" required placeholder="Contoh: 5"> 
+            <label for="rating">Rating (1-5)</label>
+            <input type="number" id="rating" min="1" max="5" required placeholder="Berikan nilai 1 sampai 5"> 
 
-            <label for="pesan">Testimoni Anda:</label>
-            <textarea id="pesan" name="pesan" required placeholder="Tulis pengalaman seru kamu belanja di sini..." rows="5"></textarea>
+            <label for="pesan">Ceritakan Pengalamanmu</label>
+            <textarea id="pesan" required placeholder="Tuliskan ulasan jujur kamu..." rows="5"></textarea>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="email@example.com">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" required placeholder="nama@email.com">
 
-            <button type="submit">Kirim Testimoni ✨</button>
+            <button type="submit">Kirim Testimoni Sekarang 🚀</button>
         </form>
     </main>
 </div>
 
 <footer>
-    <p>&copy; 2026 Toko Buku Saura Book Store.Crafting Stories with Heart   ❤️</p>
+    <div class="container">
+        <p>&copy; 2026 Saura Book Store. Crafting Stories with Heart ❤️</p>
+    </div>
 </footer>
 
 <script>
-    // Perbaikan ID pada JavaScript agar sesuai dengan ID di HTML (formtestimoni)
     document.getElementById('formtestimoni').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -194,10 +205,12 @@
         testimoniList.push(dataBaru);
         localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
 
-        // Pastikan file ini ada di folder project kamu
+        // Beri alert kecil agar user tahu data terkirim
+        alert('Terima kasih! Testimoni kamu sudah tersimpan.');
         window.location.href = 'tampil-testimoni.html'; 
     });
 </script>
 
 </body>
 </html>
+
