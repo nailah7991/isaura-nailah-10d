@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event - Saura Book Store</title>
+    <title>Agenda & Event - Saura Book Store</title>
     <style>
-        /* Variabel Warna Berdasarkan Palet Foto Saura */
+        /* PALET WARNA GLITTER MAGIC SESUAI FOTO KAMU */
         :root {
             --dark-midnight: #201d39;  /* Deep Navy */
             --velvet-plum: #514575;    /* Velvet Plum */
@@ -22,19 +22,19 @@
             color: var(--dark-midnight);
         }
 
-        /* Container utama */
+        /* CONTAINER AGAR RAPI DI TENGAH */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Navigasi Aesthetic */
+        /* NAVIGASI AESTHETIC */
         nav {
             background-color: var(--dark-midnight);
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         nav a {
@@ -42,9 +42,10 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             transition: 0.3s;
+            letter-spacing: 1px;
         }
 
         nav a:hover {
@@ -62,26 +63,17 @@
             margin-bottom: 10px;
         }
 
-        header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        /* Card Event List */
-        .event-list {
-            margin-bottom: 50px;
-        }
-
+        /* KARTU EVENT DENGAN WARNA BARU */
         .event-card {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             gap: 25px;
-            box-shadow: 0 8px 20px rgba(81, 69, 117, 0.1);
-            border-left: 8px solid var(--amber-glow);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 25px rgba(81, 69, 117, 0.1);
+            border-left: 10px solid var(--amber-glow);
+            transition: 0.3s;
         }
 
         .event-card:hover {
@@ -94,61 +86,37 @@
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            min-width: 90px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-width: 80px;
+            height: fit-content;
         }
 
-        .event-date .day {
+        .event-date span {
             display: block;
-            font-size: 30px;
-            font-weight: bold;
-            line-height: 1;
         }
 
-        .event-date .month {
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+        .day { font-size: 32px; font-weight: bold; }
+        .month { font-size: 16px; font-weight: bold; text-transform: uppercase; }
 
         .event-detail h3 {
             margin-top: 0;
             color: var(--velvet-plum);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
-        .event-detail p {
-            margin: 5px 0;
-            color: #555;
-        }
-
-        .event-detail strong {
-            color: var(--dark-midnight);
-        }
-
-        .btn-event {
+        .btn-daftar {
             display: inline-block;
             margin-top: 15px;
             color: var(--amber-glow);
             font-weight: bold;
             text-decoration: none;
-            transition: 0.3s;
         }
 
-        .btn-event:hover {
-            color: var(--velvet-plum);
-            text-decoration: underline;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
             background-color: var(--dark-midnight);
             color: var(--misty-violet);
-            margin-top: 50px;
+            margin-top: 60px;
         }
     </style>
 </head>
@@ -183,7 +151,7 @@
                     <p><strong>📍 Lokasi:</strong> Perpustakaan Nasional, Jakarta</p>
                     <p><strong>⏰ Waktu:</strong> 10:00 WIB - Selesai</p>
                     <p>Acara peluncuran buku terbaru dengan sesi tanda tangan eksklusif.</p>
-                    <a href="#" class="btn-event">Daftar Sekarang →</a>
+                    <a href="#" class="btn-daftar">Daftar Sekarang →</a>
                 </div>
             </div>
 
@@ -197,17 +165,16 @@
                     <p><strong>📍 Lokasi:</strong> Online (Zoom Meeting)</p>
                     <p><strong>⏰ Waktu:</strong> 19:00 WIB - 21:00 WIB</p>
                     <p>Belajar teknik menulis narasi yang memikat bersama editor senior kami.</p>
-                    <a href="#" class="btn-event">Join Zoom →</a>
+                    <a href="#" class="btn-daftar" style="color: var(--velvet-plum);">Join Zoom →</a>
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Saura Book Store. Membawa keajaiban di setiap halaman ❤️</p>
-        </div>
+        <p>&copy; 2026 Saura Book Store. Membawa keajaiban di setiap halaman ❤️</p>
     </footer>
 
 </body>
 </html>
+
