@@ -3,25 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak - Website Kami</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Kontak - Saura Book Store</title>
+    <style>
+        /* Variabel Warna Berdasarkan Palet Foto Saura */
+        :root {
+            --dark-midnight: #201d39;  /* Deep Navy */
+            --velvet-plum: #514575;    /* Velvet Plum */
+            --misty-violet: #a79dda;   /* Misty Violet */
+            --amber-glow: #e58500;     /* Amber Glow */
+            --glitter-honey: #ffc451;  /* Glitter Honey */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9fb;
+            color: var(--dark-midnight);
+        }
+
+        /* Navigasi Rapi */
+        nav {
+            background-color: var(--dark-midnight);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: var(--misty-violet);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--glitter-honey);
+        }
+
+        /* Container Utama */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h1 {
+            color: var(--velvet-plum);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Layout Grid untuk Form dan Info */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(81, 69, 117, 0.1);
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--velvet-plum);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: 0.3s;
+            box-sizing: border-box; /* Biar input tidak meluber */
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--misty-violet);
+            outline: none;
+            background-color: #fdfbff;
+        }
+
+        .btn-kirim {
+            background-color: var(--amber-glow);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-kirim:hover {
+            background-color: var(--velvet-plum);
+            transform: translateY(-2px);
+        }
+
+        /* Info Styling */
+        .contact-info h3 {
+            color: var(--velvet-plum);
+            border-bottom: 3px solid var(--glitter-honey);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .map-placeholder {
+            margin-top: 30px;
+            background: #f0eff5;
+            height: 200px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--velvet-plum);
+            font-style: italic;
+            border: 2px dashed var(--misty-violet);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--dark-midnight);
+            color: var(--misty-violet);
+            margin-top: 60px;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Beranda</a>
-        <a href="produk.html">produk</a>
-        <a href="bedahbuku.html">Bedah Buku</a>
-        <a href="testimoni.html">Testimoni</a>
-        <a href="tampil-testimoni.html">Testimoni pembeli</a>
-        <a href="kontak.html" class="active">kontak</a>
-        <a href="event.html">event</a>
+        <div class="container-nav">
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="bedahbuku.html">Bedah Buku</a>
+            <a href="testimoni.html">Testimoni</a>
+            <a href="tampil-testimoni.html">Ulasan Pembeli</a>
+            <a href="kontak.html" class="active">Kontak</a>
+            <a href="event.html">Event</a>
+        </div>
     </nav>
 
     <main class="container">
         <section class="contact-header">
             <h1>Hubungi Kami</h1>
-            <p>Silakan tinggalkan pesan, kami akan segera membalasnya.</p>
+            <p>Ada pertanyaan untuk Saura Book Store? Silakan tinggalkan pesan di bawah ini.</p>
         </section>
 
         <section class="contact-content">
@@ -42,25 +199,25 @@
                         <textarea id="pesan" name="pesan" rows="5" required placeholder="Apa yang ingin Anda tanyakan?"></textarea>
                     </div>
 
-                    <button type="submit" class="btn-kirim">Kirim Pesan</button>
+                    <button type="submit" class="btn-kirim">Kirim Pesan ✨</button>
                 </form>
             </div>
 
             <div class="contact-info">
                 <h3>Informasi Lainnya</h3>
-                <p><strong>Alamat:</strong> Jl. Toko Buku No. 10, Jakarta</p>
-                <p><strong>WhatsApp:</strong> 0812-3456-7890</p>
-                <p><strong>Email:</strong> admin@tokobuku.com</p>
+                <p><strong>📍 Alamat:</strong> Jl. Toko Buku No. 10, Jakarta</p>
+                <p><strong>📱 WhatsApp:</strong> 0812-3456-7890</p>
+                <p><strong>📧 Email:</strong> admin@tokobuku.com</p>
                 
                 <div class="map-placeholder">
-                    <p><em>[Lokasi Google Maps di sini]</em></p>
+                    <p>📍 Google Maps akan muncul di sini</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 saura book store. All rights reserved.</p>
+        <p>&copy; 2026 Saura Book Store. Membawa keajaiban di setiap halaman ❤️</p>
     </footer>
 
 </body>
