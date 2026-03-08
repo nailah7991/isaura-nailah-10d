@@ -1,89 +1,53 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedah Buku | Saura Book Store</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        /* Kode CSS agar semua foto ukurannya sama dan rapi */
-        .sampul {
-            width: 250px;       /* Lebar foto disamakan */
-            height: 350px;      /* Tinggi foto disamakan */
-            object-fit: cover;  /* Foto tidak akan terlihat gepeng/penyet */
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin: 20px 0;
-            display: block;
-        }
-
-        .artikel {
-            margin-bottom: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <div class="nav-container">
-        <div class="logo">SAURA <span>BOOK STORE</span></div>
-        <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="produk.html">Produk</a> 
-            <a href="bedahbuku.html" class="active">Bedah Buku</a>
-            <a href="testimoni.html">Testimoni</a>
-            <a href="tampil-testimoni.html">Pembeli</a>
-            <a href="kontak.html">Kontak</a>
-            <a href="event.html">Event</a>
+<div class="container-aesthetic">
+    <div class="book-card">
+        <div class="card-image">
+            <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
+        </div>
+        <div class="card-content">
+            <span class="genre-tag">THRILLER</span>
+            <h2>1. A Beautiful Crime</h2>
+            <p class="penulis">Penulis: Christopher Bollen</p>
+            <div class="deskripsi">
+                <p>A Beautiful Crime mengisahkan sepasang kekasih yang hidup dalam dunia sosial kelas atas di Venesia. Novel ini menggabungkan kemewahan, seni, dan kejahatan dalam satu cerita yang elegan.</p>
+            </div>
+            <blockquote>“Keindahan tidak pernah benar-benar polos; di baliknya selalu ada rahasia.”</blockquote>
         </div>
     </div>
-</nav>
 
-<header class="page-header">
-    <h1>Bedah Buku Pilihan</h1>
-    <p>Ulasan mendalam dari koleksi terbaik Saura Book Store</p>
-</header>
+    <div class="book-card">
+        <div class="card-image">
+            <img src="Negeri 5 Menara.jpg" alt="Negeri 5 Menara">
+        </div>
+        <div class="card-content">
+            <span class="genre-tag">INSPIRATIONAL</span>
+            <h2>2. Negeri 5 Menara</h2>
+            <p class="penulis">Penulis: Ahmad Fuadi</p>
+            <div class="deskripsi">
+                <p>Perjalanan hidup Alif di pondok pesantren Madani. Ia menemukan makna perjuangan, persahabatan, dan kekuatan impian melalui mantra "Man Jadda Wajada".</p>
+            </div>
+            <blockquote>“Man jadda wajada - Siapa yang bersungguh-sungguh dia berhasil.”</blockquote>
+        </div>
+    </div>
 
-<div class="container-aesthetic">
-    <main class="artikel">
-        <h2>bedah buku: a beautiful crime</h2>
-        <p class="penulis">ditulis oleh : christopher bollen</p>
-        <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" class="sampul" alt="A Beautiful Crime">
-        <p>A Beautiful Crime adalah novel thriller penuh intrik yang berlatar di kota Venesia, Italia.</p>
-    </main>
-
-    <main class="artikel">
-        <h2>bedah buku: negeri 5 menara</h2>
-        <p class="penulis">ditulis oleh : ahmad fuadi</p>
-        <img src="Negeri 5 Menara.jpg" class="sampul" alt="Negeri 5 Menara">
-        <p>Buku ini menceritakan perjalanan hidup alif di pondok pesantren Madani yang penuh perjuangan.</p>
-        <blockquote>“man jadda wajada-siapa yang bersungguh-sungguh dia berhasil.”</blockquote>
-    </main>
-
-    <main class="artikel">
-        <h2>bedah buku: yang telah lama pergi</h2>
-        <p class="penulis">ditulis oleh : tere liye</p>
-        <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" class="sampul" alt="Yang Telah Lama Pergi">
-        <p>Novel fiksi sejarah yang menceritakan perjalanan Mas’ud Al-Baghdadi melintasi lautan Nusantara.</p>
-    </main>
+    <div class="book-card">
+        <div class="card-image">
+            <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" alt="Yang Telah Lama Pergi">
+        </div>
+        <div class="card-content">
+            <span class="genre-tag">FIKSI SEJARAH</span>
+            <h2>3. Yang Telah Lama Pergi</h2>
+            <p class="penulis">Penulis: Tere Liye</p>
+            <div class="deskripsi">
+                <p>Kisah Mas’ud Al-Baghdadi, seorang kartografer abad ke-13 yang berlayar melintasi lautan Nusantara di tengah gejolak sejarah dan kekuasaan.</p>
+            </div>
+            <blockquote>“Kepergiannya mengajarkan arti kehilangan, kesetiaan, dan kedewasaan.”</blockquote>
+        </div>
+    </div>
 </div>
 
-<div style="text-align: center; margin-bottom: 50px;">
+<div style="text-align: center; margin: 40px 0;">
     <a href="produk.html" class="btn-primary">← Kembali ke Katalog</a>
 </div>
-
-<footer>
-    <p>&copy; 2026 Toko Buku Saura Book Store</p>
-</footer>
-
-</body>
-</html>
-
-
 
 
 
