@@ -5,25 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bedah Buku | Saura Book Store</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* CSS Tambahan agar semua foto ukurannya sama */
+        .sampul {
+            width: 250px;       /* Tentukan lebar yang sama */
+            height: 350px;      /* Tentukan tinggi yang sama */
+            object-fit: cover;  /* Memastikan gambar tidak gepeng (terpotong rapi) */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 20px 0;
+            display: block;
+        }
+        
+        .artikel {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Membuat konten artikel di tengah */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
 
 <nav>
     <div class="nav-container">
         <div class="logo">SAURA <span>BOOK STORE</span></div>
-    <div class="nav-links">
-    <a href="index.html">Beranda</a>
-    <a href="produk.html">Produk</a> <a href="bedahbuku.html" class="active">Bedah Buku</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="tampil-testimoni.html">Pembeli</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="event.html">Event</a>
-</div>
-
-...
-
-<div style="text-align: center; margin-bottom: 50px;">
-    <a href="produk.html" class="btn-primary">← Kembali ke Katalog</a> </div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a> 
+            <a href="bedahbuku.html" class="active">Bedah Buku</a>
+            <a href="testimoni.html">Testimoni</a>
+            <a href="tampil-testimoni.html">Pembeli</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="event.html">Event</a>
         </div>
     </div>
 </nav>
@@ -39,22 +54,22 @@
         <p class="penulis">ditulis oleh : christopher bollen</p>
         <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" class="sampul" alt="A Beautiful Crime">
         <p>
-            Judul: A Beautiful Crime Penulis: Christopher Bollen Deskripsi: A Beautiful Crime adalah novel thriller penuh intrik yang berlatar di kota Venesia, Italia. Cerita mengikuti dua kekasih yang terlibat dalam sebuah penipuan seni yang rumit di tengah keindahan kota yang glamor. Ketika rahasia, kebohongan, dan ambisi semakin dalam, keduanya harus menghadapi konsekuensi dari pilihan mereka dalam dunia kriminal berkelas tinggi.
+            A Beautiful Crime adalah novel thriller penuh intrik yang berlatar di kota Venesia, Italia. Cerita mengikuti dua kekasih yang terlibat dalam sebuah penipuan seni yang rumit.
         </p>
         <blockquote>
-            “Keindahan tidak pernah benar-benar polos; di baliknya selalu ada rahasia, dan di dalam rahasia itulah manusia mengungkap siapa dirinya yang sebenarnya.”
+            “Keindahan tidak pernah benar-benar polos; di baliknya selalu ada rahasia.”
         </blockquote>
     </main>
 
     <main class="artikel">
         <h2>bedah buku: negeri 5 menara</h2>
         <p class="penulis">ditulis oleh : ahmad fuadi</p>
-        <img src="https://www.google.com/imgres?q=negeri%205%20menara&imgurl=https%3A%2F%2Frricoid-assets.obs.ap-southeast-4.myhuaweicloud.com%2Fberita%2FPalangkaraya%2Fo%2F1725946577702-IMG_2339%2Fl2hdpb0w7ayych0.jpeg&imgrefurl=https%3A%2F%2Frri.co.id%2Fpalangkaraya%2Fhiburan%2F965234%2Fcontact.html&docid=eI3Kp4-a3sTidM&tbnid=pvaBvAwqCFUiNM&vet=12ahUKEwjt-uKR1I-TAxWjXGwGHfNwACkQnPAOegQINxAB..i&w=486&h=549&hcb=2&ved=2ahUKEwjt-uKR1I-TAxWjXGwGHfNwACkQnPAOegQINxAB" class="sampul" alt="Negeri 5 Menara">
+        <img src="Negeri 5 Menara.jpg" class="sampul" alt="Negeri 5 Menara">
         <p>
-            Buku ini menceritakan perjalanan hidup alif, seorang anak Minang yang menempuh pendidikan di pondok pesantren Madani awalnya penuh keraguan, namun perlahan alif menemukan makna perjuangan, persahabatan, dan kekuatan impian.
+            Buku ini menceritakan perjalanan hidup Alif di pondok pesantren Madani. Ia menemukan makna perjuangan, persahabatan, dan kekuatan impian melalui mantra "Man Jadda Wajada".
         </p>
         <blockquote>
-            “man jadda wajada-siapa yang bersungguh-sungguh dia berhasil.”
+            “Man jadda wajada - Siapa yang bersungguh-sungguh dia berhasil.”
         </blockquote>
     </main>
 
@@ -63,10 +78,10 @@
         <p class="penulis">ditulis oleh : tere liye</p>
         <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" class="sampul" alt="Yang Telah Lama Pergi">
         <p>
-            Yang Telah Lama Pergi adalah novel fiksi sejarah yang menceritakan perjalanan Mas’ud Al-Baghdadi, seorang kartografer abad ke-13 yang berlayar melintasi lautan Nusantara.
+            Novel fiksi sejarah menceritakan Mas’ud Al-Baghdadi, seorang kartografer abad ke-13 yang berlayar melintasi lautan Nusantara di tengah gejolak sejarah.
         </p>
         <blockquote>
-            “Ada hal-hal yang harus benar-benar pergi dari hidup seseorang, bukan karena dilupakan, tetapi karena kepergiannya mengajarkan arti kehilangan, kesetiaan, dan kedewasaan.”
+            “Kepergiannya mengajarkan arti kehilangan, kesetiaan, dan kedewasaan.”
         </blockquote>
     </main>
 </div>
@@ -81,7 +96,6 @@
 
 </body>
 </html>
-
 
 
 
