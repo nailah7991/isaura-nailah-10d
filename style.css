@@ -156,4 +156,90 @@ footer {
     text-align: center;
     padding: 50px;
 }
+<style>
+<head>/* Container Utama */
+.container-aesthetic {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Kotak Kartu Buku */
+.book-card {
+    background: white;
+    border-radius: 20px;
+    display: flex; /* Membuat gambar dan teks bersampingan */
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Bayangan halus */
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Bagian Gambar */
+.card-image {
+    flex: 1;
+    max-width: 300px;
+    background: #f4f4f4;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjamin ukuran gambar seragam */
+}
+
+/* Bagian Konten Teks */
+.card-content {
+    flex: 2;
+    padding: 40px;
+    text-align: left;
+}
+
+.genre-tag {
+    font-size: 12px;
+    color: #a29bfe;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-content h2 {
+    margin: 10px 0;
+    color: #2d3436;
+}
+
+.penulis {
+    color: #636e72;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.deskripsi p {
+    color: #2d3436;
+    line-height: 1.6;
+}
+
+blockquote {
+    border-left: 4px solid #fab1a0;
+    padding-left: 15px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #b2bec3;
+}
+
+/* Responsif untuk HP agar gambar pindah ke atas */
+@media (max-width: 768px) {
+    .book-card {
+        flex-direction: column;
+    }
+    .card-image {
+        max-width: 100%;
+        height: 300px;
+    }
+}</head>
+<style>
 
