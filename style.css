@@ -157,3 +157,39 @@ footer {
     padding: 50px;
 }
 
+/* --- KODE KHUSUS LAYAR HP (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Navigasi: Dari ke samping, jadi berderet ke bawah */
+    .nav-container {
+        flex-direction: column; 
+        padding: 15px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 2. Menu Link: Kasih jarak agar mudah diklik jempol */
+    nav a {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    /* 3. Gambar: Pastikan gambar tidak "keluar" dari layar */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 4. Kontainer Utama: Beri ruang di pinggir layar agar teks tidak nempel ke tembok HP */
+    body {
+        padding: 0 15px;
+        overflow-x: hidden; /* Mencegah layar bisa digeser ke kanan-kiri (biar gak goyang) */
+    }
+
+    /* 5. Judul: Perkecil ukuran teks agar tidak memenuhi layar */
+    h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+}
