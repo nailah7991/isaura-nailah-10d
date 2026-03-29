@@ -3,52 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak - Saura Book Store</title>
+    <title>Kontak | Saura Book Store</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Variabel Warna Berdasarkan Palet Foto Saura */
+        /* --- RESET & THEME COLORS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --dark-midnight: #201d39;  /* Deep Navy */
-            --velvet-plum: #514575;    /* Velvet Plum */
-            --misty-violet: #a79dda;   /* Misty Violet */
-            --amber-glow: #e58500;     /* Amber Glow */
-            --glitter-honey: #ffc451;  /* Glitter Honey */
+            --bg-color: #f4f1ea;    /* Krem Kertas */
+            --primary-dark: #1a1a1a; /* Hitam Elegan */
+            --accent-color: #8b735b;  /* Cokelat Tua */
+            --text-muted: #666;
+            --card-bg: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9; /* Background abu-abu sangat muda agar tidak silau */
-            color: var(--dark-midnight);
+            background-color: var(--bg-color) !important;
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark) !important;
+            padding-top: 100px;
+            line-height: 1.6;
         }
 
-        /* Container Navigasi */
+        /* --- NAVIGASI LENGKAP AESTHETIC --- */
         nav {
-            background-color: var(--dark-midnight) !important;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background-color: var(--bg-color) !important;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
         }
 
-        nav a {
-            color: var(--misty-violet);
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 14px;
+            color: var(--primary-dark) !important;
+        }
+
+        .logo span {
+            color: var(--accent-color) !important;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark) !important;
+            margin-left: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--glitter-honey) !important;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color) !important;
         }
 
-        /* Container Utama */
+        /* --- KONTEN KONTAK --- */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 20px;
         }
 
         .contact-header {
@@ -57,173 +92,155 @@
         }
 
         .contact-header h1 {
-            color: var(--velvet-plum);
-            font-size: 2.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-dark);
             margin-bottom: 10px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        /* Layout Grid */
-        .contact-content {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
-            background: white;
+            background: var(--card-bg);
             padding: 40px;
             border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(81, 69, 117, 0.15);
-            border-top: 8px solid var(--amber-glow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(139, 115, 91, 0.1);
         }
 
         /* Form Styling */
-        .form-group {
-            margin-bottom: 25px;
-        }
+        .form-group { margin-bottom: 20px; }
 
-        .form-group label {
+        label {
             display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: var(--velvet-plum);
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-dark);
         }
 
-        .form-group input, .form-group textarea {
+        input, textarea {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e1e1e1;
+            border: 1px solid #dcd7ca;
+            background-color: #fafaf8;
             border-radius: 12px;
-            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
             transition: 0.3s;
-            box-sizing: border-box;
         }
 
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--misty-violet);
+        input:focus, textarea:focus {
             outline: none;
-            background-color: #f9f8ff;
+            border-color: var(--accent-color);
+            background-color: #ffffff;
         }
 
         .btn-kirim {
-            background-color: var(--amber-glow);
-            color: white;
+            background-color: var(--primary-dark) !important;
+            color: white !important;
             border: none;
-            padding: 18px 35px;
-            border-radius: 12px;
-            font-weight: 800;
+            padding: 18px;
+            border-radius: 50px;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
             font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.4s;
+            transition: 0.3s;
+            margin-top: 10px;
         }
 
         .btn-kirim:hover {
-            background-color: var(--velvet-plum);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: var(--accent-color) !important;
+            transform: translateY(-2px);
         }
 
         /* Info Styling */
-        .contact-info {
-            padding-left: 20px;
-            border-left: 1px solid #eee;
-        }
-
         .contact-info h3 {
-            color: var(--velvet-plum);
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             margin-bottom: 25px;
-            position: relative;
+            color: var(--primary-dark);
         }
 
-        .contact-info h3::after {
-            content: '';
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item strong {
             display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--glitter-honey);
-            margin-top: 8px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
-        .contact-info p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 15px;
-        }
-
-        .map-placeholder {
+        .map-box {
             margin-top: 30px;
-            background: #f0eff5;
-            height: 220px;
+            background: #fcfbf8;
+            height: 200px;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--velvet-plum);
+            color: var(--accent-color);
             font-style: italic;
-            border: 2px dashed var(--misty-violet);
+            border: 1px dashed var(--accent-color);
+            font-size: 0.9rem;
         }
 
         footer {
             text-align: center;
             padding: 40px 0;
-            background-color: var(--dark-midnight);
-            color: var(--misty-violet);
-            margin-top: 80px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        /* Responsif Mobile */
         @media (max-width: 768px) {
-            .contact-content {
-                grid-template-columns: 1fr;
-                padding: 25px;
-            }
-            .contact-info {
-                padding-left: 0;
-                border-left: none;
-                border-top: 1px solid #eee;
-                padding-top: 30px;
-            }
+            .contact-grid { grid-template-columns: 1fr; padding: 25px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="container">
-            <a href="index.html">Beranda</a>
-            <a href="produk.html">Produk</a>
-            <a href="bedahbuku.html">Bedah Buku</a>
-            <a href="testimoni.html">Testimoni</a>
-            <a href="tampil-testimoni.html">Ulasan Pembeli</a>
-            <a href="kontak.html" class="active">Kontak</a>
-            <a href="event.html">Event</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
+            <div class="nav-links">
+                <a href="index.html">beranda</a>
+                <a href="produk.html">katalog</a>
+                <a href="bedahbuku.html">bedah buku</a>
+                <a href="testimoni.html">testimoni</a>
+                <a href="tampil-testimoni.html">ulasan pembeli</a>
+                <a href="kontak.html" class="active">kontak</a>
+                <a href="event.html">event</a>
+            </div>
         </div>
     </nav>
 
     <main class="container">
         <section class="contact-header">
             <h1>Hubungi Kami</h1>
-            <p>Punya pertanyaan tentang buku atau event kami? Kami siap membantu Novita!</p>
+            <p>Punya pertanyaan tentang buku atau event kami? Kami siap membantu!</p>
         </section>
 
-        <section class="contact-content">
+        <section class="contact-grid">
             <div class="contact-form">
                 <form action="#">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap</label>
-                        <input type="text" id="nama" required placeholder="Siapa nama kamu?">
+                        <input type="text" id="nama" required placeholder="Masukkan nama kamu">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Alamat Email</label>
-                        <input type="email" id="email" required placeholder="contoh@email.com">
+                        <input type="email" id="email" required placeholder="nama@email.com">
                     </div>
 
                     <div class="form-group">
                         <label for="pesan">Pesan atau Pertanyaan</label>
-                        <textarea id="pesan" rows="6" required placeholder="Tuliskan pesanmu di sini..."></textarea>
+                        <textarea id="pesan" rows="5" required placeholder="Apa yang ingin kamu tanyakan?"></textarea>
                     </div>
 
                     <button type="submit" class="btn-kirim">Kirim Pesan Sekarang ✨</button>
@@ -232,21 +249,32 @@
 
             <div class="contact-info">
                 <h3>Info Saura Store</h3>
-                <p><strong>📍 Lokasi:</strong><br>Jl. Toko Buku No. 10, Jakarta Pusat</p>
-                <p><strong>📱 WhatsApp:</strong><br>0812-3456-7890</p>
-                <p><strong>📧 Email:</strong><br>admin@saurabookstore.com</p>
                 
-                <div class="map-placeholder">
-                    <p>🗺️ Area Peta Google Maps</p>
+                <div class="info-item">
+                    <strong>📍 Lokasi</strong>
+                    <p>Jl. Toko Buku No. 10, Jakarta Pusat</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>📱 WhatsApp</strong>
+                    <p>0812-3456-7890</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>📧 Email</strong>
+                    <p>admin@saurabookstore.com</p>
+                </div>
+                
+                <div class="map-box">
+                    <p>🗺️ Google Maps Area</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; © 2026 Saura Book Store | Crafting Stories with Heart❤️</p>
+        <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
     </footer>
 
 </body>
 </html>
-
