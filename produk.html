@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* PAKSA WARNA AGAR MUNCUL */
+        /* CSS INTERNAL - AGAR WARNA TIDAK TERTIMPA FILE LAIN */
         * {
             margin: 0;
             padding: 0;
@@ -16,20 +16,21 @@
         }
 
         body {
-            background-color: #f4f1ea !important; /* Krem Kertas */
+            background-color: #f4f1ea !important; /* Krem Aesthetic */
             font-family: 'Poppins', sans-serif;
-            color: #1a1a1a !important; /* PAKSA TEKS HITAM */
+            color: #1a1a1a !important; /* Teks Hitam Pekat agar terlihat */
             padding-top: 100px;
+            line-height: 1.6;
         }
 
-        /* --- NAVIGATION (CONTAINER) --- */
+        /* --- NAVIGATION --- */
         nav {
             background-color: #f4f1ea !important;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 9999;
-            border-bottom: 2px solid #8b735b;
+            border-bottom: 1px solid #dcd7ca;
         }
 
         .nav-container {
@@ -50,48 +51,57 @@
         }
 
         .logo span {
-            color: #8b735b !important;
+            color: #8b735b !important; /* Cokelat Aesthetic */
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #1a1a1a !important; /* PAKSA HITAM */
-            margin-left: 15px;
+            color: #1a1a1a !important;
+            margin-left: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
+            transition: 0.3s;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #8b735b !important;
         }
 
-        /* --- KATALOG PRODUK --- */
+        /* --- CONTENT --- */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        h1 {
+        .page-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 40px;
             color: #1a1a1a !important;
         }
 
+        /* --- PRODUK CARD --- */
         .produk-card {
             background: #ffffff !important;
             border-radius: 15px;
             display: flex;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid #dcd7ca;
+            transition: 0.3s;
+        }
+
+        .produk-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 115, 91, 0.15);
         }
 
         .produk-image {
-            width: 250px;
+            width: 280px;
             flex-shrink: 0;
         }
 
@@ -102,12 +112,15 @@
         }
 
         .produk-info {
-            padding: 30px;
-            color: #1a1a1a !important;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .produk-info h2 {
             font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             margin-bottom: 10px;
             color: #1a1a1a !important;
         }
@@ -115,26 +128,34 @@
         .harga {
             color: #8b735b !important;
             font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
             display: block;
+        }
+
+        .meta-tag {
+            font-size: 0.8rem;
+            color: #777 !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .deskripsi {
             font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
             color: #444 !important;
+            margin-bottom: 25px;
         }
 
         .btn-beli {
             background-color: #1a1a1a !important;
             color: #ffffff !important;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border-radius: 50px;
             border: none;
             cursor: pointer;
             font-weight: 600;
+            width: fit-content;
             transition: 0.3s;
         }
 
@@ -142,10 +163,10 @@
             background-color: #8b735b !important;
         }
 
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
+        /* Mobile View */
+        @media (max-width: 850px) {
             .produk-card { flex-direction: column; }
-            .produk-image { width: 100%; height: 300px; }
+            .produk-image { width: 100%; height: 350px; }
             .nav-links { display: none; }
         }
     </style>
@@ -168,23 +189,51 @@
     </nav>
 
     <div class="container">
-        <h1>Katalog Produk</h1>
+        <h1 class="page-title">Katalog Produk Buku</h1>
 
         <div class="produk-card">
             <div class="produk-image">
                 <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
             </div>
             <div class="produk-info">
-                <h2>A Beautiful Crime</h2>
+                <h2>1. A Beautiful Crime</h2>
                 <span class="harga">Rp128.000</span>
-                <p class="deskripsi">Kisah sepasang kekasih di dunia sosial kelas atas Venesia yang penuh intrik dan kemewahan. Novel ini menggabungkan seni dan kejahatan dalam alur yang elegan.</p>
+                <div class="meta-tag">Penulis: Christopher Bollen | Genre: Thriller</div>
+                <p class="deskripsi">Kisah sepasang kekasih yang hidup dalam dunia sosial kelas atas di Venesia. Novel ini menggabungkan kemewahan, seni, dan kejahatan dalam satu cerita yang elegan dan penuh intrik.</p>
                 <button class="btn-beli">Beli Sekarang</button>
             </div>
         </div>
 
         <div class="produk-card">
+            <div class="produk-image">
+                <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" alt="Yang Telah Lama Pergi">
+            </div>
+            <div class="produk-info">
+                <h2>2. Yang Telah Lama Pergi</h2>
+                <span class="harga">Rp155.000</span>
+                <div class="meta-tag">Penulis: Tere Liye | Genre: Sejarah</div>
+                <p class="deskripsi">Novel fiksi sejarah tentang Mas’ud Al-Baghdadi, seorang kartografer abad ke-13 yang berlayar melintasi lautan Nusantara di tengah gejolak kekuasaan Kerajaan Sriwijaya.</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+        </div>
 
+        <div class="produk-card">
+            <div class="produk-image">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/The_Silent_Patient_early_2019_UK_edition.png/250px-The_Silent_Patient_early_2019_UK_edition.png" alt="The Silent Patient">
+            </div>
+            <div class="produk-info">
+                <h2>3. The Silent Patient</h2>
+                <span class="harga">Rp228.000</span>
+                <div class="meta-tag">Penulis: Alex Michaelides | Genre: Psikologis</div>
+                <p class="deskripsi">Thriller psikologis tentang Alicia Berenson yang membunuh suaminya lalu memilih bungkam. Seorang terapis berusaha mengungkap rahasia mengejutkan di balik kebisuan tersebut.</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
+        </div>
 
+    </div>
+
+</body>
+</html>
 
 
 
