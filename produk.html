@@ -8,35 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- RESET & THEME COLORS --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-color: #f4f1ea;    /* Krem Kertas */
-            --primary-dark: #1a1a1a; /* Hitam Elegan */
-            --accent-color: #8b735b;  /* Cokelat Tua Aesthetic */
-            --text-muted: #666;
-            --card-bg: #ffffff;
-        }
+        /* --- CSS INTERNAL (PASTI TERBACA) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-color);
+            background-color: #f4f1ea !important; /* WARNA KREM */
             font-family: 'Poppins', sans-serif;
-            color: var(--primary-dark);
+            color: #1a1a1a;
             padding-top: 100px;
-            line-height: 1.6;
         }
 
-        /* --- NAVIGATION (SAME AS HOME/BEDAH BUKU) --- */
+        /* NAVBAR CONTAINER */
         nav {
-            background-color: var(--bg-color);
+            background-color: #f4f1ea;
             position: fixed;
-            top: 0;
-            width: 100%;
+            top: 0; width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(139, 115, 91, 0.2);
         }
@@ -55,89 +41,98 @@
             font-size: 1.4rem;
             font-weight: 700;
             text-decoration: none;
-            color: var(--primary-dark);
+            color: #1a1a1a;
         }
 
-        .logo span {
-            color: var(--accent-color);
-            font-weight: 400;
-            font-style: italic;
-        }
+        .logo span { color: #8b735b; font-style: italic; font-weight: 400; }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--primary-dark);
+            color: #1a1a1a;
             margin-left: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-color);
-        }
+        .nav-links a.active { color: #8b735b; }
 
-        /* --- HEADER --- */
-        .page-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .page-header p {
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* --- DAFTAR PRODUK (GRID) --- */
+        /* PRODUK SECTION */
         .daftar-produk {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr; /* List view untuk deskripsi panjang */
-            gap: 40px;
         }
 
         .produk-card {
-            background: var(--card-bg);
+            background: #ffffff;
             border-radius: 20px;
-            display: flex; /* Horizontal Layout */
+            display: flex;
+            margin-bottom: 30px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid rgba(139, 115, 91, 0.1);
-            transition: 0.4s;
         }
 
-        .produk-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(139, 115, 91, 0.15);
+        .produk-image { width: 250px; flex-shrink: 0; }
+        .produk-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .produk-info { padding: 30px; }
+        .produk-info h2 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+        .harga { color: #8b735b; font-weight: 600; font-size: 1.2rem; margin-bottom: 10px; }
+        .deskripsi { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
+
+        .btn-beli {
+            background: #1a1a1a;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
         }
 
-        .produk-image {
-            width: 300px;
-            flex-shrink: 0;
-            overflow: hidden;
+        @media (max-width: 768px) {
+            .produk-card { flex-direction: column; }
+            .produk-image { width: 100%; height: 300px; }
+            .nav-links { display: none; }
         }
+    </style>
+</head>
+<body>
 
-        .produk-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Saura <span>Book Store</span></a>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="produk.html" class="active">Produk</a>
+            <a href="bedahbuku.html">Bedah Buku</a>
+            <a href="testimoni.html">Testimoni</a>
+            <a href="tampil-testimoni.html">Pembeli</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="event.html">Event</a>
+        </div>
+    </div>
+</nav>
 
-        .produk-info {
-            padding: 40px;
+<section class="daftar-produk">
+    <div class="produk-card">
+        <div class="produk-image">
+            <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
+        </div>
+        <div class="produk-info">
+            <h2>A Beautiful Crime</h2>
+            <p class="harga">Rp128.000</p>
+            <p class="deskripsi">Kisah sepasang kekasih di dunia sosial kelas atas Venesia yang penuh intrik dan kemewahan.</p>
+            <button class="btn-beli">Beli Sekarang</button>
+        </div>
+    </div>
+    
+    </section>
 
+</body>
+</html>
 
 
 
