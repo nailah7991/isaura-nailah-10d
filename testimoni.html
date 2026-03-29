@@ -8,22 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* PAKSA WARNA KREM & HITAM - ANTI UNGU */
+        /* --- RESET & DASAR --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f4f1ea !important; /* Krem Kertas */
+            background-color: #f4f1ea !important;
             font-family: 'Poppins', sans-serif;
             color: #1a1a1a !important;
             padding-top: 110px;
             line-height: 1.6;
         }
 
-        /* --- NAVIGASI LENGKAP AESTHETIC --- */
+        /* --- NAVIGASI RAPI --- */
         nav {
             background-color: #f4f1ea !important;
             position: fixed;
-            top: 0; width: 100%;
+            top: 0; 
+            width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(139, 115, 91, 0.3);
         }
@@ -55,13 +56,14 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active { color: #8b735b !important; }
-
-        /* --- FORM TESTIMONI --- */
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        /* --- FORM CARD RAPI & LURUS --- */
+        .container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
 
         .form-card {
             background: #ffffff !important;
@@ -75,15 +77,28 @@
             font-family: 'Playfair Display', serif;
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #1a1a1a !important;
         }
 
-        p.subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+        .subtitle { 
+            text-align: center; 
+            color: #666; 
+            margin-bottom: 35px; 
+            font-size: 0.95rem;
+        }
 
-        .form-group { margin-bottom: 20px; }
+        .form-group { 
+            margin-bottom: 22px; 
+        }
 
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: #1a1a1a; font-size: 0.9rem; }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #1a1a1a; 
+            font-size: 0.9rem; 
+        }
 
         input, textarea {
             width: 100%;
@@ -92,12 +107,18 @@
             background-color: #fafaf8;
             border-radius: 10px;
             font-family: 'Poppins', sans-serif;
-            transition: 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
-        input:focus, textarea:focus { border-color: #8b735b; outline: none; background: #fff; }
+        input:focus, textarea:focus { 
+            border-color: #8b735b; 
+            outline: none; 
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(139, 115, 91, 0.1);
+        }
 
-        /* --- TOMBOL KIRIM HITAM ELEGAN --- */
+        /* --- TOMBOL KIRIM --- */
         .btn-kirim {
             background-color: #1a1a1a !important;
             color: #ffffff !important;
@@ -106,17 +127,29 @@
             border-radius: 50px;
             cursor: pointer;
             width: 100%;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 15px;
             transition: 0.3s;
+            display: block;
         }
 
-        .btn-kirim:hover { background-color: #8b735b !important; transform: translateY(-2px); }
+        .btn-kirim:hover { 
+            background-color: #8b735b !important; 
+            transform: translateY(-2px); 
+        }
 
-        footer { text-align: center; padding: 40px; color: #777; font-size: 0.8rem; }
+        footer { 
+            text-align: center; 
+            padding: 50px 20px; 
+            color: #777; 
+            font-size: 0.8rem; 
+        }
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .form-card { padding: 25px; }
+        }
     </style>
 </head>
 <body>
@@ -138,38 +171,73 @@
 
 <div class="container">
     <h1>Kirim Testimoni</h1>
-    <p class="subtitle">Ceritakan keajaiban buku yang kamu temukan di Saura.</p>
+    <p class="subtitle">Bagikan kesan membacamu bersama keluarga Saura.</p>
 
     <div class="form-card">
         <form id="formTestimoni">
             <div class="form-group">
-                <label>Nama Lengkap</label>
-                <input type="text" id="nama" placeholder="Siapa namamu?" required>
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Tulis nama lengkapmu" required>
             </div>
+
             <div class="form-group">
-                <label>Alamat Email</label>
-                <input type="email" id="email" placeholder="nama@email.com" required>
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" placeholder="contoh: nama@email.com" required>
             </div>
+
             <div class="form-group">
-                <label>Asal Instansi/Sekolah</label>
-                <input type="text" id="asal" placeholder="Contoh: SMA Negeri 1" required>
+                <label for="asal">Asal Instansi / Sekolah</label>
+                <input type="text" id="asal" placeholder="Misal: Universitas Indonesia" required>
             </div>
+
             <div class="form-group">
-                <label>Judul Buku</label>
-                <input type="text" id="judul" placeholder="Buku apa yang kamu ulas?" required>
+                <label for="judul">Judul Buku</label>
+                <input type="text" id="judul" placeholder="Buku apa yang baru kamu baca?" required>
             </div>
+
             <div class="form-group">
-                <label>Rating (1-5)</label>
-                <input type="number" id="rating" min="1" max="5" placeholder="Beri nilai 1 sampai 5" required>
+                <label for="rating">Rating (1 - 5)</label>
+                <input type="number" id="rating" min="1" max="5" placeholder="Beri bintang 1 sampai 5" required>
             </div>
+
             <div class="form-group">
-                <label>Ulasan Kamu</label>
-                <textarea id="pesan" rows="5" placeholder="Tuliskan pengalaman membacamu..." required></textarea>
+                <label for="pesan">Ulasan Jujurmu</label>
+                <textarea id="pesan" rows="5" placeholder="Ceritakan pengalamanmu membaca buku ini..." required></textarea>
             </div>
+
             <button type="submit" class="btn-kirim">Kirim Ulasan Sekarang ✨</button>
         </form>
     </div>
 </div>
 
 <footer>
-    <p>&copy;
+    <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
+</footer>
+
+<script>
+    document.getElementById('formTestimoni').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Mengambil data dari form
+        const ulasanBaru = {
+            nama: document.getElementById('nama').value,
+            email: document.getElementById('email').value,
+            asal: document.getElementById('asal').value,
+            judul: document.getElementById('judul').value,
+            rating: document.getElementById('rating').value,
+            pesan: document.getElementById('pesan').value
+        };
+
+        // Menyimpan ke LocalStorage
+        let listUlasan = JSON.parse(localStorage.getItem('testimoniList')) || [];
+        listUlasan.push(ulasanBaru);
+        localStorage.setItem('testimoniList', JSON.stringify(listUlasan));
+
+        // Notifikasi dan pindah halaman
+        alert("Terima kasih, " + ulasanBaru.nama + "! Ulasanmu sudah kami terima.");
+        window.location.href = 'tampil-testimoni.html';
+    });
+</script>
+
+</body>
+</html>
