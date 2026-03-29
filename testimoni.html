@@ -147,51 +147,10 @@
                 <input type="text" id="nama" placeholder="Siapa namamu?" required>
             </div>
             <div class="form-group">
+                <label>Alamat Email</label>
+                <input type="email" id="email" placeholder="nama@email.com" required>
+            </div>
+            <div class="form-group">
                 <label>Asal Instansi/Sekolah</label>
                 <input type="text" id="asal" placeholder="Contoh: SMA Negeri 1" required>
             </div>
-            <div class="form-group">
-                <label>Judul Buku</label>
-                <input type="text" id="judul" placeholder="Buku apa yang kamu ulas?" required>
-            </div>
-            <div class="form-group">
-                <label>Rating (1-5)</label>
-                <input type="number" id="rating" min="1" max="5" placeholder="Beri nilai 1 sampai 5" required>
-            </div>
-            <div class="form-group">
-                <label>Ulasan Kamu</label>
-                <textarea id="pesan" rows="5" placeholder="Tuliskan pengalaman membacamu..." required></textarea>
-            </div>
-            <button type="submit" class="btn-kirim">Kirim Ulasan Sekarang ✨</button>
-        </form>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
-</footer>
-
-<script>
-    document.getElementById('formTestimoni').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const ulasanBaru = {
-            nama: document.getElementById('nama').value,
-            asal: document.getElementById('asal').value,
-            judul: document.getElementById('judul').value,
-            rating: document.getElementById('rating').value,
-            pesan: document.getElementById('pesan').value
-        };
-
-        let listUlasan = JSON.parse(localStorage.getItem('testimoniList')) || [];
-        listUlasan.push(ulasanBaru);
-        localStorage.setItem('testimoniList', JSON.stringify(listUlasan));
-
-        // Setelah kirim, pindah ke halaman konfirmasi atau daftar ulasan
-        alert("Terima kasih! Ulasan kamu sudah masuk.");
-        window.location.href = 'tampil-testimoni.html';
-    });
-</script>
-
-</body>
-</html>
