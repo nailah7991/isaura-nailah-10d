@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirim Testimoni | Saura Book Store</title>
+    <title>Terima Kasih | Saura Book Store</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* PAKSA WARNA KREM & HITAM - ANTI UNGU */
+        /* PAKSA WARNA KREM & HITAM */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f4f1ea !important; /* Krem Kertas */
+            background-color: #f4f1ea !important;
             font-family: 'Poppins', sans-serif;
             color: #1a1a1a !important;
             padding-top: 110px;
-            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* --- NAVIGASI LENGKAP AESTHETIC --- */
+        /* --- NAVIGASI LENGKAP --- */
         nav {
             background-color: #f4f1ea !important;
             position: fixed;
@@ -55,63 +57,84 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active { color: #8b735b !important; }
+        /* --- BOX KONFIRMASI --- */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-        /* --- FORM TESTIMONI --- */
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
-
-        .form-card {
+        .confirm-card {
             background: #ffffff !important;
-            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            padding: 50px;
             border-radius: 20px;
+            text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid #dcd7ca;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #1a1a1a !important;
         }
 
-        p.subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+        p { color: #666; margin-bottom: 30px; }
 
-        .form-group { margin-bottom: 20px; }
-
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: #1a1a1a; font-size: 0.9rem; }
-
-        input, textarea {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #dcd7ca;
-            background-color: #fafaf8;
-            border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
-            transition: 0.3s;
-        }
-
-        input:focus, textarea:focus { border-color: #8b735b; outline: none; background: #fff; }
-
-        /* --- TOMBOL KIRIM HITAM ELEGAN --- */
-        .btn-kirim {
+        .btn-back {
+            display: inline-block;
             background-color: #1a1a1a !important;
             color: #ffffff !important;
-            padding: 16px;
-            border: none;
+            text-decoration: none;
+            padding: 15px 30px;
             border-radius: 50px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
             font-weight: 600;
-            margin-top: 10px;
             transition: 0.3s;
         }
 
-        .btn-kirim:hover { background-color: #8b735b !important; transform: translateY(-2px); }
+        .btn-back:hover {
+            background-color: #8b735b !important;
+            transform: translateY(-2px);
+        }
 
-        footer { text-align
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
+        <div class="nav-links">
+            <a href="index.html">beranda</a>
+            <a href="produk.html">katalog</a>
+            <a href="bedahbuku.html">bedah buku</a>
+            <a href="testimoni.html">testimoni</a>
+            <a href="tampil-testimoni.html">ulasan pembeli</a>
+            <a href="kontak.html">kontak</a>
+            <a href="event.html">event</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="confirm-card">
+        <h1>Terima Kasih! ✨</h1>
+        <p>Ulasan kamu sudah kami terima. Terima kasih sudah menjadi bagian dari perjalanan Saura Book Store.</p>
+        <a href="tampil-testimoni.html" class="btn-back">Lihat Semua Ulasan &rarr;</a>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
+</footer>
+
+</body>
+</html>
