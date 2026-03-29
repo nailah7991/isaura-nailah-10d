@@ -1,59 +1,208 @@
-<div class="main-wrapper">
-    <div class="container-aesthetic">
-        <div class="book-card">
-            <div class="card-image">
-                <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
-            </div>
-            <div class="card-content">
-                <span class="genre-tag thriller">THRILLER</span>
-                <h2>A Beautiful Crime</h2>
-                <p class="penulis">Oleh <span>Christopher Bollen</span></p>
-                <div class="deskripsi">
-                    <p>Mengisahkan sepasang kekasih di dunia sosial kelas atas Venesia yang menggabungkan kemewahan dan kejahatan.</p>
-                </div>
-                <blockquote>“Keindahan tidak pernah benar-benar polos; di baliknya selalu ada rahasia.”</blockquote>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Buku Aesthetic</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        <div class="book-card">
-            <div class="card-image">
-                <img src="https://via.placeholder.com/300x450?text=Negeri+5+Menara" alt="Negeri 5 Menara">
-            </div>
-            <div class="card-content">
-                <span class="genre-tag inspirational">INSPIRATIONAL</span>
-                <h2>Negeri 5 Menara</h2>
-                <p class="penulis">Oleh <span>Ahmad Fuadi</span></p>
-                <div class="deskripsi">
-                    <p>Perjalanan Alif di Pondok Madani menemukan makna perjuangan melalui mantra "Man Jadda Wajada".</p>
-                </div>
-                <blockquote>“Man jadda wajada - Siapa yang bersungguh-sungguh dia berhasil.”</blockquote>
-            </div>
-        </div>
+    <style>
+        /* --- CSS DASAR --- */
+        body {
+            background-color: #f4f1ea; /* Warna krem kertas tua yang elegan */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+            color: #2c2c2c;
+        }
 
-        <div class="book-card">
-            <div class="card-image">
-                <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" alt="Yang Telah Lama Pergi">
+        .container-aesthetic {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        /* --- STYLING KARTU BUKU --- */
+        .book-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .book-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        /* Bagian Gambar */
+        .card-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .book-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        /* Konten Teks */
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .genre-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8b735b;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 0 0 5px 0;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .penulis {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .deskripsi p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* Kutipan / Quote */
+        blockquote {
+            margin: auto 0 0 0;
+            padding: 15px 20px;
+            background: #fdfaf5;
+            border-left: 4px solid #8b735b;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #444;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* --- NAVIGASI TOMBOL --- */
+        .nav-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: #8b735b;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(139, 115, 91, 0.3);
+        }
+
+        /* Responsif Mobile */
+        @media (max-width: 600px) {
+            .container-aesthetic {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-aesthetic">
+    <div class="book-card">
+        <div class="card-image">
+            <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
+        </div>
+        <div class="card-content">
+            <span class="genre-tag">Thriller & Art</span>
+            <h2>A Beautiful Crime</h2>
+            <p class="penulis">Karya Christopher Bollen</p>
+            <div class="deskripsi">
+                <p>Kisah intrik di Venesia yang menggabungkan kemewahan kelas atas, penipuan seni, dan ambisi yang berbahaya.</p>
             </div>
-            <div class="card-content">
-                <span class="genre-tag history">FIKSI SEJARAH</span>
-                <h2>Yang Telah Lama Pergi</h2>
-                <p class="penulis">Oleh <span>Tere Liye</span></p>
-                <div class="deskripsi">
-                    <p>Kisah Mas’ud Al-Baghdadi, kartografer abad ke-13 yang berlayar melintasi lautan Nusantara.</p>
-                </div>
-                <blockquote>“Kepergiannya mengajarkan arti kehilangan, kesetiaan, dan kedewasaan.”</blockquote>
-            </div>
+            <blockquote>“Keindahan tidak pernah benar-benar polos; di baliknya selalu ada rahasia.”</blockquote>
         </div>
     </div>
 
-    <div class="navigation-container">
-        <a href="produk.html" class="btn-primary">
-            <span class="arrow">←</span> Kembali ke Katalog
-        </a>
+    <div class="book-card">
+        <div class="card-image">
+            <img src="https://via.placeholder.com/400x600/e0e0e0/8b735b?text=Negeri+5+Menara" alt="Negeri 5 Menara">
+        </div>
+        <div class="card-content">
+            <span class="genre-tag">Inspirational</span>
+            <h2>Negeri 5 Menara</h2>
+            <p class="penulis">Karya Ahmad Fuadi</p>
+            <div class="deskripsi">
+                <p>Enam pemuda dari berbagai daerah mengejar mimpi di pondok pesantren dengan mantra sakti "Man Jadda Wajada".</p>
+            </div>
+            <blockquote>“Man jadda wajada - Siapa yang bersungguh-sungguh dia akan berhasil.”</blockquote>
+        </div>
+    </div>
+
+    <div class="book-card">
+        <div class="card-image">
+            <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" alt="Yang Telah Lama Pergi">
+        </div>
+        <div class="card-content">
+            <span class="genre-tag">Historical Fiction</span>
+            <h2>Yang Telah Lama Pergi</h2>
+            <p class="penulis">Karya Tere Liye</p>
+            <div class="deskripsi">
+                <p>Menelusuri jejak sejarah Nusantara lewat perjalanan seorang kartografer hebat di abad ke-13.</p>
+            </div>
+            <blockquote>“Kepergiannya mengajarkan arti kehilangan, kesetiaan, dan kedewasaan.”</blockquote>
+        </div>
     </div>
 </div>
 
+<div class="nav-wrapper">
+    <a href="produk.html" class="btn-primary">← KEMBALI KE KATALOG</a>
+</div>
 
+</body>
+</html>
 
 
 
