@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimoni | Saura Book Store</title>
+    <title>Kirim Testimoni | Saura Book Store</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* RESET & THEME */
+        /* --- RESET DASAR --- */
         * {
             margin: 0;
             padding: 0;
@@ -16,21 +16,21 @@
         }
 
         body {
-            background-color: #f4f1ea !important;
+            background-color: #f4f1ea !important; /* Krem Kertas */
             font-family: 'Poppins', sans-serif;
             color: #1a1a1a !important;
-            padding-top: 100px;
+            padding-top: 110px;
             line-height: 1.6;
         }
 
-        /* --- NAVIGASI --- */
+        /* --- NAVIGASI LENGKAP --- */
         nav {
             background-color: #f4f1ea !important;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
+            border-bottom: 1px solid rgba(139, 115, 91, 0.3);
         }
 
         .nav-container {
@@ -50,20 +50,28 @@
             color: #1a1a1a !important;
         }
 
-        .logo span { color: #8b735b !important; font-style: italic; }
+        .logo span {
+            color: #8b735b !important;
+            font-style: italic;
+            font-weight: 400;
+        }
 
         .nav-links a {
             text-decoration: none;
             color: #1a1a1a !important;
             margin-left: 15px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .nav-links a.active { color: #8b735b !important; }
+        .nav-links a.active {
+            color: #8b735b !important;
+            border-bottom: 2px solid #8b735b;
+        }
 
-        /* --- FORMULIR LENGKAP --- */
+        /* --- CONTAINER FORM --- */
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -89,13 +97,6 @@
             border: 1px solid #dcd7ca;
         }
 
-        .formulir-box h2 {
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #1a1a1a !important;
-        }
-
         .form-group {
             margin-bottom: 20px;
         }
@@ -105,10 +106,9 @@
             margin-bottom: 8px;
             font-weight: 600;
             font-size: 0.9rem;
-            color: #1a1a1a !important;
         }
 
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #dcd7ca;
@@ -116,7 +116,6 @@
             border-radius: 10px;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
-            transition: 0.3s;
         }
 
         input:focus, textarea:focus {
@@ -125,13 +124,126 @@
             background-color: #ffffff;
         }
 
-        /* TOMBOL KIRIM - SANGAT JELAS */
+        /* --- TOMBOL KIRIM BESAR --- */
         .btn-submit {
-            background-color: #1a1a1a !important; /* Hitam Elegan */
+            background-color: #1a1a1a !important;
             color: #ffffff !important;
             padding: 16px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            width:
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-submit:hover {
+            background-color: #8b735b !important;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .formulir-box { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
+            <div class="nav-links">
+                <a href="index.html">beranda</a>
+                <a href="produk.html">katalog</a>
+                <a href="bedahbuku.html">bedah buku</a>
+                <a href="testimoni.html" class="active">testimoni</a>
+                <a href="tampil-testimoni.html">ulasan pembeli</a>
+                <a href="kontak.html">kontak</a>
+                <a href="event.html">event</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-title">
+            <h1>Kirim Testimoni</h1>
+            <p>Bagikan pengalaman membacamu bersama Saura Book Store.</p>
+        </div>
+
+        <main class="formulir-box">
+            <form id="formtestimoni">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" required placeholder="Siapa namamu?">
+                </div>
+
+                <div class="form-group">
+                    <label for="asal">Asal Sekolah / Instansi</label>
+                    <input type="text" id="asal" required placeholder="Contoh: SMA Negeri 1">
+                </div>
+
+                <div class="form-group">
+                    <label for="judul">Judul Buku</label>
+                    <input type="text" id="judul" required placeholder="Buku apa yang kamu baca?">
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Rating (1-5)</label>
+                    <input type="number" id="rating" min="1" max="5" required placeholder="Beri nilai 1-5">
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan/Ulasan</label>
+                    <textarea id="pesan" rows="5" required placeholder="Tuliskan ulasan jujurmu di sini..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="nama@email.com">
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Testimoni Sekarang 🚀</button>
+            </form>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
+    </footer>
+
+    <script>
+        document.getElementById('formtestimoni').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const dataBaru = {
+                nama: document.getElementById('nama').value,
+                asal: document.getElementById('asal').value,
+                judul: document.getElementById('judul').value,
+                rating: document.getElementById('rating').value,
+                pesan: document.getElementById('pesan').value,
+                email: document.getElementById('email').value
+            };
+
+            // Simpan ke LocalStorage
+            let testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+            testimoniList.push(dataBaru);
+            localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
+
+            // Pindah ke halaman konfirmasi
+            window.location.href = 'konfirmasi.html'; 
+        });
+    </script>
+</body>
+</html>
 
