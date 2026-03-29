@@ -8,37 +8,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- RESET & THEME COLORS --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-color: #f4f1ea;    /* Krem Kertas */
-            --primary-dark: #1a1a1a; /* Hitam Elegan */
-            --accent-color: #8b735b;  /* Cokelat Tua */
-            --text-muted: #666;
-            --card-bg: #ffffff;
-        }
+        /* PAKSA WARNA KREM & HITAM (PENGGANTI UNGU) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-color) !important;
+            background-color: #f4f1ea !important; /* Krem Kertas */
             font-family: 'Poppins', sans-serif;
-            color: var(--primary-dark) !important;
-            padding-top: 100px;
+            color: #1a1a1a !important;
+            padding-top: 110px;
             line-height: 1.6;
         }
 
-        /* --- NAVIGASI LENGKAP --- */
+        /* --- NAVIGASI LENGKAP AESTHETIC --- */
         nav {
-            background-color: var(--bg-color) !important;
+            background-color: #f4f1ea !important;
             position: fixed;
-            top: 0;
-            width: 100%;
+            top: 0; width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
+            border-bottom: 1px solid rgba(139, 115, 91, 0.3);
         }
 
         .nav-container {
@@ -55,187 +42,153 @@
             font-size: 1.4rem;
             font-weight: 700;
             text-decoration: none;
-            color: var(--primary-dark) !important;
+            color: #1a1a1a !important;
         }
 
-        .logo span {
-            color: var(--accent-color) !important;
-            font-weight: 400;
-            font-style: italic;
-        }
+        .logo span { color: #8b735b !important; font-style: italic; font-weight: 400; }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--primary-dark) !important;
-            margin-left: 20px;
-            font-size: 0.85rem;
+            color: #1a1a1a !important;
+            margin-left: 15px;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-color) !important;
-        }
+        .nav-links a.active { color: #8b735b !important; border-bottom: 2px solid #8b735b; }
 
-        /* --- KONTEN UTAMA --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        /* --- KONTEN DAFTAR ULASAN --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
         h2 {
             font-family: 'Playfair Display', serif;
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 40px;
-            color: var(--primary-dark) !important;
+            color: #1a1a1a !important;
         }
 
-        /* --- GRID TESTIMONI --- */
         #daftarTestimoni {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 25px;
             margin-bottom: 50px;
         }
 
         .testimoni-box {
-            background: var(--card-bg) !important;
+            background: #ffffff !important;
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid rgba(139, 115, 91, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #dcd7ca;
             transition: 0.3s;
         }
 
-        .testimoni-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
+        .testimoni-box:hover { transform: translateY(-5px); border-color: #8b735b; }
 
-        .testimoni-box p {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
+        .testimoni-box p { margin-bottom: 8px; font-size: 0.9rem; color: #333 !important; }
 
-        .testimoni-box strong {
-            color: var(--accent-color) !important;
-            font-weight: 600;
-        }
+        .testimoni-box strong { color: #8b735b !important; }
 
         .pesan-text {
             font-style: italic;
-            color: #444 !important;
-            padding: 15px;
             background: #fafaf8;
-            border-left: 3px solid var(--accent-color);
-            border-radius: 0 10px 10px 0;
-            margin-top: 20px !important;
+            padding: 15px;
+            border-left: 4px solid #8b735b;
+            margin-top: 15px !important;
             font-family: 'Playfair Display', serif;
+            font-size: 1.1rem !important;
         }
 
-        /* --- TOMBOL AKSI --- */
-        .action-buttons {
-            text-align: center;
-            margin: 50px 0;
-        }
+        /* --- TOMBOL HAPUS --- */
+        .action-buttons { text-align: center; margin-bottom: 50px; }
 
         #hapusSemua {
-            background-color: transparent;
+            background: transparent;
             color: #d9534f;
             border: 1px solid #d9534f;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.85rem;
             transition: 0.3s;
         }
 
-        #hapusSemua:hover {
-            background-color: #d9534f;
-            color: white;
-        }
+        #hapusSemua:hover { background: #d9534f; color: #fff; }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-        }
+        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
-            <div class="nav-links">
-                <a href="index.html">beranda</a>
-                <a href="produk.html">katalog</a>
-                <a href="bedahbuku.html">bedah buku</a>
-                <a href="testimoni.html">testimoni</a>
-                <a href="tampil-testimoni.html" class="active">ulasan pembeli</a>
-                <a href="kontak.html">kontak</a>
-                <a href="event.html">event</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h2>✨ Kata Mereka Tentang Saura</h2>
-        
-        <div id="daftarTestimoni">
-            </div>
-
-        <div class="action-buttons">
-            <button id="hapusSemua">🗑️ Bersihkan Semua Ulasan</button>
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
+        <div class="nav-links">
+            <a href="index.html">beranda</a>
+            <a href="produk.html">katalog</a>
+            <a href="bedahbuku.html">bedah buku</a>
+            <a href="testimoni.html">testimoni</a>
+            <a href="tampil-testimoni.html" class="active">ulasan pembeli</a>
+            <a href="kontak.html">kontak</a>
+            <a href="event.html">event</a>
         </div>
     </div>
+</nav>
 
-    <footer>
-        <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
-    </footer>
+<div class="container">
+    <h2>✨ Kata Mereka Tentang Saura</h2>
+    
+    <div id="daftarTestimoni">
+        </div>
 
-    <script>
+    <div class="action-buttons">
+        <button id="hapusSemua">🗑️ Bersihkan Semua Ulasan</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
+</footer>
+
+<script>
+    function muatTestimoni() {
         const container = document.getElementById('daftarTestimoni');
         const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
 
         if (testimoniList.length === 0) {
-            container.innerHTML = `
-                <div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #666;">
-                    <p style="font-size: 1.1rem; font-style: italic;">Belum ada testimoni nih. Ayo jadi yang pertama memberi ulasan!</p>
-                </div>`;
+            container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; font-style: italic;">Belum ada ulasan saat ini.</p>`;
         } else {
+            container.innerHTML = '';
             testimoniList.forEach((t) => {
                 const el = document.createElement('div');
                 el.className = 'testimoni-box';
                 el.innerHTML = `
-                    <p><strong>👤 Nama</strong>: ${t.nama}</p>
-                    <p><strong>🏫 Asal</strong>: ${t.asal}</p>
-                    <p><strong>📖 Buku</strong>: ${t.judul}</p>
-                    <p><strong>⭐ Rating</strong>: <span style="color: #8b735b; font-weight:bold;">${t.rating}/5</span></p>
+                    <p><strong>👤 Pengirim:</strong> ${t.nama}</p>
+                    <p><strong>🏫 Instansi:</strong> ${t.asal}</p>
+                    <p><strong>📖 Buku:</strong> ${t.judul}</p>
+                    <p><strong>⭐ Rating:</strong> ${t.rating}/5</p>
                     <p class="pesan-text">"${t.pesan}"</p>
                 `;
                 container.appendChild(el);
             });
         }
+    }
 
-        document.getElementById("hapusSemua").addEventListener("click", function(){
-            const yakin = confirm("Cessalie, yakin ingin menghapus semua ulasan ini?");
-            if (yakin) {
-                localStorage.removeItem("testimoniList");
-                location.reload();
-            }
-        });
-    </script>
+    document.getElementById("hapusSemua").addEventListener("click", function(){
+        if (confirm("Cessalie, yakin ingin menghapus semua ulasan ini?")) {
+            localStorage.removeItem("testimoniList");
+            muatTestimoni();
+        }
+    });
+
+    // Jalankan fungsi saat halaman dibuka
+    muatTestimoni();
+</script>
 
 </body>
 </html>
