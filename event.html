@@ -8,30 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* RESET & DASAR - TEMA KREM & HITAM */
+        /* RESET TOTAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #f4f1ea !important; /* Krem Kertas */
+            background-color: #f4f1ea !important; /* KREM KERTAS */
             font-family: 'Poppins', sans-serif;
             color: #1a1a1a !important;
-            padding-top: 110px;
+            padding-top: 100px;
             line-height: 1.6;
         }
 
-        /* --- NAVIGASI LENGKAP & RAPI --- */
+        /* --- NAVIGASI LURUS & LENGKAP --- */
         nav {
             background-color: #f4f1ea !important;
             position: fixed;
-            top: 0; width: 100%;
-            z-index: 1000;
+            top: 0; 
+            width: 100%;
+            z-index: 9999;
             border-bottom: 1px solid rgba(139, 115, 91, 0.3);
         }
 
         .nav-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,10 +40,12 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             text-decoration: none;
             color: #1a1a1a !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .logo span { color: #8b735b !important; font-style: italic; font-weight: 400; }
@@ -50,73 +53,179 @@
         .nav-links a {
             text-decoration: none;
             color: #1a1a1a !important;
-            margin-left: 15px;
-            font-size: 0.8rem;
+            margin-left: 20px;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active { color: #8b735b !important; }
+        .nav-links a:hover, .nav-links a.active {
+            color: #8b735b !important;
+        }
 
-        /* --- HEADER --- */
+        /* --- ISI KONTEN --- */
+        .main-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
         header {
             text-align: center;
-            margin-bottom: 50px;
-            padding: 0 20px;
+            margin-bottom: 60px;
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #1a1a1a;
+            font-size: 2.8rem;
             margin-bottom: 10px;
         }
 
         header p {
-            color: #666;
-            font-style: italic;
+            color: #777;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
-        /* --- EVENT CARDS --- */
-        .container-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .event-card {
+        /* --- KARTU EVENT MINIMALIS --- */
+        .event-item {
             background: #ffffff !important;
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 30px;
             display: flex;
-            gap: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
             border: 1px solid #dcd7ca;
-            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             align-items: center;
+            transition: 0.4s ease;
         }
 
-        .event-card:hover {
-            transform: translateY(-5px);
+        .event-item:hover {
+            transform: scale(1.02);
             border-color: #8b735b;
         }
 
-        /* Kotak Tanggal Hitam Elegan */
-        .event-date {
+        /* Kotak Tanggal Hitam */
+        .date-box {
             background: #1a1a1a !important;
-            color: #ffffff !important;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            min-width: 100px;
+            color: #fff !important;
+            min-width: 90px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            margin-right: 30px;
         }
 
-        .event-date .day {
-            display: block;
-            font-size: 35px;
-            font-weight: 700;
-            font-family: 'Playfair Display',
+        .date-box .d { font-size: 28px; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .date-box .m { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Detail Teks */
+        .info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .info p {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .info .desc {
+            margin-top: 10px;
+            color: #222;
+            font-size: 0.9rem;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #8b735b;
+            padding-bottom: 3px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .event-item { flex-direction: column; text-align: center; }
+            .date-box { margin-right: 0; margin-bottom: 20px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
+            <div class="nav-links">
+                <a href="index.html">beranda</a>
+                <a href="produk.html">katalog</a>
+                <a href="bedahbuku.html">bedah buku</a>
+                <a href="testimoni.html">testimoni</a>
+                <a href="tampil-testimoni.html">ulasan</a>
+                <a href="kontak.html">kontak</a>
+                <a href="event.html" class="active">event</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <header>
+            <h1>Agenda & Event</h1>
+            <p>Jadwal kegiatan literasi mendatang.</p>
+        </header>
+
+        <div class="event-item">
+            <div class="date-box">
+                <span class="d">25</span>
+                <span class="m">Okt</span>
+            </div>
+            <div class="info">
+                <h3>Peluncuran Buku: Misteri Senja</h3>
+                <p><strong>Lokasi:</strong> Perpustakaan Nasional</p>
+                <p><strong>Waktu:</strong> 10:00 WIB</p>
+                <p class="desc">Bincang eksklusif bersama penulis dan sesi tanda tangan buku.</p>
+                <a href="#" class="btn-link">Daftar Sekarang →</a>
+            </div>
+        </div>
+
+        <div class="event-item">
+            <div class="date-box">
+                <span class="d">12</span>
+                <span class="m">Nov</span>
+            </div>
+            <div class="info">
+                <h3>Workshop Menulis Kreatif</h3>
+                <p><strong>Lokasi:</strong> Online via Zoom</p>
+                <p><strong>Waktu:</strong> 19:00 WIB</p>
+                <p class="desc">Pelajari rahasia membangun plot cerita yang kuat dan emosional.</p>
+                <a href="#" class="btn-link">Ambil Tiket Zoom →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
+    </footer>
+
+</body>
+</html>
 
