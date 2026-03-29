@@ -4,87 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk | Saura Book Store</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-<nav>
-    <div class="nav-container">
-        <div class="logo">SAURA <span>BOOK STORE</span></div>
-        <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="produk.html" class="active">Produk</a>
-            <a href="bedahbuku.html">Bedah Buku</a>
-            <a href="testimoni.html">Testimoni</a>
-            <a href="tampil-testimoni.html">Pembeli</a>
-            <a href="kontak.html">Kontak</a>
-            <a href="event.html">Event</a>
-        </div>
-    </div>
-</nav>
-
-<header class="page-header">
-    <h1>Katalog Produk Buku</h1>
-    <p>Koleksi literasi pilihan dengan sentuhan estetik untuk perpustakaan pribadi Anda.</p>
-</header>
-
-<section class="daftar-produk">
     
-    <div class="produk-card">
-        <div class="produk-image">
-            <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
-        </div>
-        <div class="produk-info">
-            <h2>1. A Beautiful Crime</h2>
-            <p class="harga">Rp128.000</p>
-            <div class="meta-tag">Penulis: Christopher Bollen | Genre: Thriller</div>
-            <p class="deskripsi">
-                A Beautiful Crime mengisahkan sepasang kekasih yang hidup dalam dunia sosial kelas atas di Venesia. Novel ini menggabungkan kemewahan, seni, dan kejahatan dalam satu cerita yang elegan. Dengan suasana aesthetic glamour, pembaca diajak menyelami sisi gelap kehidupan mewah di mana keindahan dan kejahatan berjalan beriringan.
-            </p>
-            <button class="btn-beli">Beli Sekarang</button>
-        </div>
-    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <div class="produk-card">
-        <div class="produk-image">
-            <img src="https://id-test-11.slatic.net/p/a0c31d6998c3aefd62c2dd796bf80538.png" alt="Yang Telah Lama Pergi">
-        </div>
-        <div class="produk-info">
-            <h2>2. Yang Telah Lama Pergi</h2>
-            <p class="harga">Rp155.000</p>
-            <div class="meta-tag">Penulis: Tere Liye | Genre: Sejarah</div>
-            <p class="deskripsi">
-                Novel fiksi sejarah yang berkisah tentang Mas’ud Al-Baghdadi, seorang kartografer yang berpetualang melintasi lautan abad ke-13. Menghadapi konflik dan perjuangan melawan Kerajaan Sriwijaya sambil menyelesaikan misi peta warisan ayahnya. Perpaduan apik antara petualangan dan sejarah klasik Nusantara.
-            </p>
-            <button class="btn-beli">Beli Sekarang</button>
-        </div>
-    </div>
+    <style>
+        /* --- RESET & THEME COLORS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <div class="produk-card">
-        <div class="produk-image">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/The_Silent_Patient_early_2019_UK_edition.png/250px-The_Silent_Patient_early_2019_UK_edition.png" alt="The Silent Patient">
-        </div>
-        <div class="produk-info">
-            <h2>3. The Silent Patient</h2>
-            <p class="harga">Rp228.000</p>
-            <div class="meta-tag">Penulis: Alex Michaelides | Genre: Psikologis</div>
-            <p class="deskripsi">
-                Thriller psikologis tentang Alicia Berenson, pelukis terkenal yang membunuh suaminya lalu memilih bungkam. Theo Faber, seorang terapis, terobsesi mengungkap rahasia di balik kebisuan Alicia, membuka trauma mengejutkan tentang pikiran manusia.
-            </p>
-            <button class="btn-beli">Beli Sekarang</button>
-        </div>
-    </div>
+        :root {
+            --bg-color: #f4f1ea;    /* Krem Kertas */
+            --primary-dark: #1a1a1a; /* Hitam Elegan */
+            --accent-color: #8b735b;  /* Cokelat Tua Aesthetic */
+            --text-muted: #666;
+            --card-bg: #ffffff;
+        }
 
-</section>
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark);
+            padding-top: 100px;
+            line-height: 1.6;
+        }
 
-<footer>
-    <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart</p>
-</footer>
+        /* --- NAVIGATION (SAME AS HOME/BEDAH BUKU) --- */
+        nav {
+            background-color: var(--bg-color);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
+        }
 
-</body>
-</html>
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-dark);
+        }
 
+        .logo span {
+            color: var(--accent-color);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            margin-left: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* --- HEADER --- */
+        .page-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* --- DAFTAR PRODUK (GRID) --- */
+        .daftar-produk {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr; /* List view untuk deskripsi panjang */
+            gap: 40px;
+        }
+
+        .produk-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            display: flex; /* Horizontal Layout */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(139, 115, 91, 0.1);
+            transition: 0.4s;
+        }
+
+        .produk-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 115, 91, 0.15);
+        }
+
+        .produk-image {
+            width: 300px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .produk-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .produk-info {
+            padding: 40px;
 
 
 
