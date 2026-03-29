@@ -4,55 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Saura Book Store</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & VARIAVEL WARNA --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #f4f1ea;    /* Krem Kertas Tua */
+            --primary-dark: #1a1a1a; /* Hitam Elegan */
+            --accent-color: #8b735b;  /* Cokelat Tua Aesthetic */
+            --text-muted: #666;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark);
+            padding-top: 100px;
+            line-height: 1.8;
+        }
+
+        /* --- NAVIGATION (SAMA DENGAN BEDAH BUKU) --- */
+        nav {
+            background-color: var(--bg-color);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-dark);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            margin-left: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* --- MAIN CONTENT CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* --- CATEGORY BOX AESTHETIC --- */
+        .category-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+            border: 1px solid rgba(139, 115, 91, 0.1);
+            margin-top: 40px;
+        }
+
+        .category-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .category-box ul {
+            list-style: none;
+        }
+
+        .category-box li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .category-box li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .category-box li strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-primary {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 45px;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(139, 115, 91, 0.3);
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 2.2rem; }
+            .category-box { padding: 25px; }
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-container">
-    <div class="logo">
-      Saura <span>Book Store</span>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Saura <span>Book Store</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Beranda</a>
+                <a href="produk.html">Produk</a>
+                <a href="bedahbuku.html">Bedah Buku</a>
+                <a href="testimoni.html">Testimoni</a>
+                <a href="tampil-testimoni.html">Pembeli</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="event.html">Event</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Selamat Datang di Saura Book Store</h1>
+            <p class="welcome-text">
+                Website ini berisi informasi tentang produk buku terbaik, acara bedah buku yang inspiratif, dan testimoni jujur dari para pelanggan kami.
+                Kami menyediakan berbagai jenis buku yang dikurasi khusus untuk menemani setiap langkah perjalanan literasimu.
+            </p>
+            
+            <a href="produk.html" class="btn-primary">Jelajahi Katalog</a>
+        </div>
+
+        <div class="category-box">
+            <h3>Koleksi Kami</h3>
+            <ul>
+                <li><strong>Buku Pelajaran:</strong> Mendukung akademik dari tingkat SD hingga SMA (Matematika, IPA, IPS).</li>
+                <li><strong>Novel Fiksi:</strong> Temukan petualangan dalam fiksi ilmiah, misteri, hingga kisah romansa.</li>
+                <li><strong>Motivasi:</strong> Transformasi diri melalui buku seperti <em>Atomic Habits</em> dan lainnya.</li>
+                <li><strong>Buku Anak:</strong> Mengembangkan imajinasi melalui cerita bergambar yang edukatif.</li>
+                <li><strong>Referensi Umum:</strong> Ensiklopedia dan kamus lengkap untuk wawasan tak terbatas.</li>
+            </ul>
+        </div>
     </div>
-    
-    <div class="nav-links">
-      <a href="index.html" class="active">Beranda</a>
-      <a href="produk.html">Produk</a>
-      <a href="bedahbuku.html">Bedah Buku</a>
-      <a href="testimoni.html">Testimoni</a>
-      <a href="tampil-testimoni.html">Pembeli</a>
-      <a href="kontak.html">Kontak</a>
-      <a href="event.html">Event</a>
-    </div>
-  </div>
-</nav>
-</body>    
-
-<div class="container main-content">
-    <h1>Selamat Datang di Saura Book Store</h1>
-
-    <p>
-        Website ini berisi informasi tentang produk buku, bedah buku, dan testimoni pelanggan.
-    </p>
-
-    <p>
-        Kami menyediakan berbagai jenis buku yang cocok untuk semua kalangan, 
-        mulai dari anak-anak hingga orang dewasa.
-    </p>
-
-    <div class="category-box">
-        <h3>Kategori Buku</h3>
-        <ul>
-            <li><strong>Buku Pelajaran:</strong> Matematika, Bahasa Indonesia, IPA, IPS (SD–SMA)</li>
-            <li><strong>Novel Fiksi:</strong> Novel remaja, cerita cinta, fiksi ilmiah, misteri</li>
-            <li><strong>Motivasi:</strong> Atomic Habits, Berani Tidak Disukai, dll</li>
-            <li><strong>Buku Anak:</strong> Cerita bergambar & edukasi dini</li>
-            <li><strong>Referensi Umum:</strong> Ensiklopedia, kamus, buku hobi</li>
-        </ul>
-    </div>
-
-    <a href="produk.html" class="btn-primary">Lihat Produk</a>
-</div>
 
 </body>
 </html>
