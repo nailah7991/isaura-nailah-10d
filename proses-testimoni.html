@@ -3,145 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saura Book Store</title>
+    <title>Terima Kasih | Saura Book Store</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Mengatur warna dasar berdasarkan gambar palet */
+        /* --- RESET & THEME COLORS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --velvet-plum: #514575;
-            --misty-violet: #a79dda;
-            --amber-glow: #e58500;
-            --glitter-honey: #ffc451;
-            --dark-navy: #201d39; /* Warna paling gelap dari palet */
+            --bg-color: #f4f1ea;    /* Krem Kertas */
+            --primary-dark: #1a1a1a; /* Hitam Elegan */
+            --accent-color: #8b735b;  /* Cokelat Tua */
+            --text-muted: #666;
+            --card-bg: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: var(--dark-navy);
+            background-color: var(--bg-color) !important;
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark) !important;
+            padding-top: 100px;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Container untuk merapikan konten agar di tengah */
-        .container {
-            width: 90%;
+        /* --- NAVIGASI LENGKAP --- */
+        nav {
+            background-color: var(--bg-color) !important;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
+        }
+
+        .nav-container {
             max-width: 1100px;
             margin: 0 auto;
-        }
-
-        /* Header & Navigasi */
-        .header {
-            background-color: var(--dark-navy);
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-block {
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--glitter-honey); /* Menggunakan warna Glitter Honey */
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-dark) !important;
+        }
+
+        .logo span {
+            color: var(--accent-color) !important;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark) !important;
+            margin-left: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        nav a {
-            color: var(--misty-violet);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        .nav-links a:hover {
+            color: var(--accent-color) !important;
         }
 
-        nav a:hover {
-            color: var(--ffc451); /* Warna berubah saat kursor di atasnya */
-        }
-
-        /* Bagian Utama (Main) */
+        /* --- BAGIAN UTAMA --- */
         main {
-            padding: 50px 0;
-            min-height: 60vh;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .konfirmasi-box {
+            background: var(--card-bg) !important;
+            max-width: 600px;
+            width: 100%;
+            padding: 50px;
+            border-radius: 20px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(139, 115, 91, 0.1);
         }
 
-        .konfirmasi {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--amber-glow);
+        .konfirmasi-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark) !important;
+            margin-bottom: 15px;
         }
 
-        h1 {
-            color: var(--velvet-plum);
-            margin-bottom: 20px;
+        .konfirmasi-box p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
 
+        /* --- TOMBOL AESTHETIC --- */
         .btn-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: var(--amber-glow);
-            color: white;
+            background-color: var(--primary-dark) !important;
+            color: #ffffff !important;
             text-decoration: none;
+            padding: 15px 35px;
             border-radius: 50px;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .btn-link:hover {
-            background-color: var(--velvet-plum);
+            background-color: var(--accent-color) !important;
+            transform: translateY(-2px);
         }
 
-        /* Footer */
+        /* --- FOOTER --- */
         footer {
-            background-color: var(--dark-navy);
-            color: var(--misty-violet);
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .konfirmasi-box { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="nav-block">
-            <div class="logo">Saura Book Store</div>
-            <nav>
-                <a href="index.html">Beranda</a>
-                <a href="produk.html">Produk</a>
-                <a href="bedahbuku.html">Bedah Buku</a>
-                <a href="testimoni.html">Testimoni</a>
-                <a href="tampil-testimoni.html">Ulasan</a>
-                <a href="kontak.html">Kontak</a>
-                <a href="event.html">Event</a>
-            </nav>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAURA <span>BOOK STORE</span></a>
+            <div class="nav-links">
+                <a href="index.html">beranda</a>
+                <a href="produk.html">katalog</a>
+                <a href="bedahbuku.html">bedah buku</a>
+                <a href="testimoni.html">testimoni</a>
+                <a href="tampil-testimoni.html">ulasan pembeli</a>
+                <a href="kontak.html">kontak</a>
+                <a href="event.html">event</a>
+            </div>
         </div>
-    </div>
-</header>
+    </nav>
 
-<main class="container">
-    <section class="konfirmasi">
-        <h1>Terima Kasih! ✨</h1>
-        <p>Testimoni anda telah berhasil dikirim dan sangat berarti bagi kami.</p>
-        <a href="tampil-testimoni.html" class="btn-link">Lihat semua testimoni &rarr;</a>
-    </section>
-</main>
+    <main>
+        <section class="konfirmasi-box">
+            <h1>Terima Kasih! ✨</h1>
+            <p>Testimoni kamu telah berhasil terkirim dan sangat berarti bagi Saura Book Store.</p>
+            <a href="tampil-testimoni.html" class="btn-link">Lihat semua ulasan &rarr;</a>
+        </section>
+    </main>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Toko Buku Saura Book Store.  Crafting Stories with Heart ❤️</p>
-    </div>
-</footer>
+    <footer>
+        <p>&copy; 2026 Saura Book Store | Crafting Stories with Heart ❤️</p>
+    </footer>
 
 </body>
 </html>
