@@ -8,40 +8,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS INI WAJIB ADA AGAR TAMPILAN TIDAK BERANTAKAN */
+        /* --- RESET & DASAR --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #f4f1ea;
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 50px 20px;
             color: #2c2c2c;
+            padding-top: 80px; /* Memberi ruang agar konten tidak tertutup navbar */
         }
 
+        /* --- NAVIGASI UTAMA (AESTHETIC NAVBAR) --- */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: #8b735b;
+        }
+
+        /* --- LAYOUT KATALOG --- */
         .container-aesthetic {
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 40px auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            padding: 0 20px;
         }
 
         .book-card {
             background: #ffffff;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.4s;
             display: flex;
             flex-direction: column;
         }
 
         .book-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
 
         .card-image img {
             width: 100%;
-            height: 350px;
+            height: 380px;
             object-fit: cover;
         }
 
@@ -61,8 +113,8 @@
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
         }
 
         .penulis {
@@ -71,24 +123,21 @@
             margin-bottom: 15px;
         }
 
-        .deskripsi p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #555;
-        }
-
         blockquote {
             margin-top: 20px;
-            padding-left: 15px;
+            padding: 15px;
+            background: #fdfaf5;
             border-left: 3px solid #8b735b;
             font-style: italic;
             font-family: 'Playfair Display', serif;
             color: #444;
+            font-size: 0.9rem;
         }
 
-        .nav-wrapper {
+        /* --- TOMBOL KEMBALI DI BAWAH --- */
+        .bottom-nav {
             text-align: center;
-            margin-top: 50px;
+            margin: 60px 0;
         }
 
         .btn-primary {
@@ -97,16 +146,33 @@
             background: #1a1a1a;
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 50px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
         .btn-primary:hover {
             background: #8b735b;
+            transform: scale(1.05);
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .main-nav { padding: 15px 5%; }
+            .nav-links { display: none; } /* Sembunyikan menu di HP agar simpel */
         }
     </style>
 </head>
 <body>
+
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo">MyLibrary</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="produk.html">Katalog</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
 
     <div class="container-aesthetic">
         <div class="book-card">
@@ -117,10 +183,7 @@
                 <span class="genre-tag">Thriller</span>
                 <h2>A Beautiful Crime</h2>
                 <p class="penulis">Oleh Christopher Bollen</p>
-                <div class="deskripsi">
-                    <p>Mengisahkan sepasang kekasih di dunia sosial kelas atas Venesia yang penuh intrik.</p>
-                </div>
-                <blockquote>“Keindahan tidak pernah benar-benar polos.”</blockquote>
+                <blockquote>“Keindahan tidak pernah benar-benar polos; di baliknya selalu ada rahasia.”</blockquote>
             </div>
         </div>
 
@@ -132,10 +195,7 @@
                 <span class="genre-tag">Inspirational</span>
                 <h2>Negeri 5 Menara</h2>
                 <p class="penulis">Oleh Ahmad Fuadi</p>
-                <div class="deskripsi">
-                    <p>Kisah perjuangan di Pondok Madani dengan semangat "Man Jadda Wajada".</p>
-                </div>
-                <blockquote>“Siapa yang bersungguh-sungguh dia berhasil.”</blockquote>
+                <blockquote>“Man jadda wajada - Siapa yang bersungguh-sungguh dia berhasil.”</blockquote>
             </div>
         </div>
 
@@ -147,21 +207,17 @@
                 <span class="genre-tag">History</span>
                 <h2>Yang Telah Lama Pergi</h2>
                 <p class="penulis">Oleh Tere Liye</p>
-                <div class="deskripsi">
-                    <p>Perjalanan sejarah Nusantara melalui mata seorang kartografer abad ke-13.</p>
-                </div>
-                <blockquote>“Kepergiannya mengajarkan arti kesetiaan.”</blockquote>
+                <blockquote>“Kepergiannya mengajarkan arti kehilangan dan kesetiaan.”</blockquote>
             </div>
         </div>
     </div>
 
-    <div class="nav-wrapper">
-        <a href="produk.html" class="btn-primary">← KEMBALI KE KATALOG</a>
+    <div class="bottom-nav">
+        <a href="produk.html" class="btn-primary">← Kembali ke Katalog Utama</a>
     </div>
 
 </body>
 </html>
-
 
 
 
