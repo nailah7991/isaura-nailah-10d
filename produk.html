@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk | Saura Book Store</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- CSS INTERNAL (PASTI TERBACA) --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* PAKSA WARNA AGAR MUNCUL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background-color: #f4f1ea !important; /* WARNA KREM */
+            background-color: #f4f1ea !important; /* Krem Kertas */
             font-family: 'Poppins', sans-serif;
-            color: #1a1a1a;
+            color: #1a1a1a !important; /* PAKSA TEKS HITAM */
             padding-top: 100px;
         }
 
-        /* NAVBAR CONTAINER */
+        /* --- NAVIGATION (CONTAINER) --- */
         nav {
-            background-color: #f4f1ea;
+            background-color: #f4f1ea !important;
             position: fixed;
-            top: 0; width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(139, 115, 91, 0.2);
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            border-bottom: 2px solid #8b735b;
         }
 
         .nav-container {
@@ -38,60 +43,106 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            color: #1a1a1a !important;
             text-decoration: none;
-            color: #1a1a1a;
+            font-weight: bold;
         }
 
-        .logo span { color: #8b735b; font-style: italic; font-weight: 400; }
+        .logo span {
+            color: #8b735b !important;
+        }
 
         .nav-links a {
             text-decoration: none;
-            color: #1a1a1a;
-            margin-left: 20px;
+            color: #1a1a1a !important; /* PAKSA HITAM */
+            margin-left: 15px;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
         }
 
-        .nav-links a.active { color: #8b735b; }
+        .nav-links a:hover, .nav-links a.active {
+            color: #8b735b !important;
+        }
 
-        /* PRODUK SECTION */
-        .daftar-produk {
+        /* --- KATALOG PRODUK --- */
+        .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
 
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a !important;
+        }
+
         .produk-card {
-            background: #ffffff;
-            border-radius: 20px;
+            background: #ffffff !important;
+            border-radius: 15px;
             display: flex;
             margin-bottom: 30px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid rgba(139, 115, 91, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #dcd7ca;
         }
 
-        .produk-image { width: 250px; flex-shrink: 0; }
-        .produk-image img { width: 100%; height: 100%; object-fit: cover; }
+        .produk-image {
+            width: 250px;
+            flex-shrink: 0;
+        }
 
-        .produk-info { padding: 30px; }
-        .produk-info h2 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
-        .harga { color: #8b735b; font-weight: 600; font-size: 1.2rem; margin-bottom: 10px; }
-        .deskripsi { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
+        .produk-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .produk-info {
+            padding: 30px;
+            color: #1a1a1a !important;
+        }
+
+        .produk-info h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            color: #1a1a1a !important;
+        }
+
+        .harga {
+            color: #8b735b !important;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .deskripsi {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #444 !important;
+        }
 
         .btn-beli {
-            background: #1a1a1a;
-            color: white;
-            padding: 10px 25px;
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+            padding: 12px 30px;
             border-radius: 50px;
             border: none;
             cursor: pointer;
             font-weight: 600;
+            transition: 0.3s;
         }
 
+        .btn-beli:hover {
+            background-color: #8b735b !important;
+        }
+
+        /* Responsive Mobile */
         @media (max-width: 768px) {
             .produk-card { flex-direction: column; }
             .produk-image { width: 100%; height: 300px; }
@@ -101,39 +152,37 @@
 </head>
 <body>
 
-<nav>
-    <div class="nav-container">
-        <a href="index.html" class="logo">Saura <span>Book Store</span></a>
-        <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="produk.html" class="active">Produk</a>
-            <a href="bedahbuku.html">Bedah Buku</a>
-            <a href="testimoni.html">Testimoni</a>
-            <a href="tampil-testimoni.html">Pembeli</a>
-            <a href="kontak.html">Kontak</a>
-            <a href="event.html">Event</a>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Saura <span>Book Store</span></a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="produk.html" class="active">Produk</a>
+                <a href="bedahbuku.html">Bedah Buku</a>
+                <a href="testimoni.html">Testimoni</a>
+                <a href="tampil-testimoni.html">Pembeli</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="event.html">Event</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<section class="daftar-produk">
-    <div class="produk-card">
-        <div class="produk-image">
-            <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
+    <div class="container">
+        <h1>Katalog Produk</h1>
+
+        <div class="produk-card">
+            <div class="produk-image">
+                <img src="https://upload.wikimedia.org/wikipedia/id/0/00/A_Beautiful_Crime_book_cover.jpg" alt="A Beautiful Crime">
+            </div>
+            <div class="produk-info">
+                <h2>A Beautiful Crime</h2>
+                <span class="harga">Rp128.000</span>
+                <p class="deskripsi">Kisah sepasang kekasih di dunia sosial kelas atas Venesia yang penuh intrik dan kemewahan. Novel ini menggabungkan seni dan kejahatan dalam alur yang elegan.</p>
+                <button class="btn-beli">Beli Sekarang</button>
+            </div>
         </div>
-        <div class="produk-info">
-            <h2>A Beautiful Crime</h2>
-            <p class="harga">Rp128.000</p>
-            <p class="deskripsi">Kisah sepasang kekasih di dunia sosial kelas atas Venesia yang penuh intrik dan kemewahan.</p>
-            <button class="btn-beli">Beli Sekarang</button>
-        </div>
-    </div>
-    
-    </section>
 
-</body>
-</html>
-
+        <div class="produk-card">
 
 
 
